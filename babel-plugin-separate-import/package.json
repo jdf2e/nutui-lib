@@ -1,0 +1,20 @@
+{
+  "name": "@nutui/babel-plugin-separate-import",
+  "version": "1.2.1",
+  "description": "按需构建nutui2.0的组件，减小打包体积",
+  "main": "index.js",
+  "author": "famanoder、yangjinjun3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdf2e/nut-lib/tree/master/babel-plugin-separate-import"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "babel-types": "^6.26.0"
+  },
+  "keywords": [
+    "jdcfe",
+    "nutui",
+    "import"
+  ]
+}
