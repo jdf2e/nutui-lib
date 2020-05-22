@@ -1,4 +1,4 @@
-# NutUI lib
+# NutUI Lib
 
 NutUI 内置插件库
 
