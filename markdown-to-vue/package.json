@@ -1,12 +1,16 @@
 {
   "name": "@nutui/markdown-to-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "markdown-to-vue",
   "main": "mdToVue.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdf2e/nutui-lib/tree/master/markdown-to-vue"
+  },  
+  "author": "linrufeng",
   "license": "ISC",
   "dependencies": {
     "chokidar": "^3.3.1",

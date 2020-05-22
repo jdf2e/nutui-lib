@@ -1,6 +1,6 @@
 {
   "name": "@nutui/cli",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "nutui cli",
   "main": "./dist_cli/bin/index.js",
   "files": [
@@ -10,6 +10,10 @@
     "site",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdf2e/nutui-lib/tree/master/cli"
+  },        
   "bin": {
     "nutui-cli": "./dist_cli/bin/index.js"
   },
@@ -29,7 +33,7 @@
     "@babel/preset-env": "^7.8.7",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
-    "@nutui/markdown-to-vue": "0.0.3",
+    "@nutui/markdown-to-vue": "^0.0.4",
     "@types/node": "^13.1.1",
     "@vue/test-utils": "1.0.0-beta.25",
     "autoprefixer": "^9.7.3",
