@@ -22,6 +22,7 @@ const routes = [
 	}
 ];
 
+
 //组件示例页面
 packages.map(item => {
 	if (item.showDemo === false) return;

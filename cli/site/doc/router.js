@@ -69,19 +69,32 @@ const routes = [
 		}
 	}
 ];
-//组件md文件展示
-packages.map(item => {
-	if (item.showDemo === false) return;
-	const pkgName = item.name.toLowerCase();
-	routes.push({
-		path: '/' + item.name,
+
+let contexts = require.context('./view', false, /\.vue$/)
+contexts.keys().forEach(component => {
+    let componentEntity = contexts(component).default;
+    routes.push({
+		path: '/' + componentEntity.name,
 		components: {
 			default: Index,
-			main: () => import('./view/' + pkgName + '.vue')
+			main: componentEntity
 		},
-		name: item.name
+		name: componentEntity.name
 	});
-});
+})
+//组件md文件展示
+// packages.map(item => {
+// 	if (item.showDemo === false) return;
+// 	const pkgName = item.name.toLowerCase();
+// 	routes.push({
+// 		path: '/' + item.name,
+// 		components: {
+// 			default: Index,
+// 			main: () => import('./view/' + pkgName + '.vue')
+// 		},
+// 		name: item.name
+// 	});
+// });
 
 const router = new VueRouter({
 	routes,
