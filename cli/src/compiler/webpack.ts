@@ -1,18 +1,22 @@
 import Webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import logger from '../util/logger';
+import { getPort } from 'portfinder';
+import address from 'address';
 
 function devServer(config: Webpack.Configuration) {
 	const compiler = Webpack(config);
 	const devServerOptions = {
 		open: false,
 		host: '0.0.0.0',
+		port: 8080,
 		stats: 'errors-only',
 		publicPath: '/',
 		disableHostCheck: true,
 		hot: true,
 		hotOnly: true,
 		inline: true,
+		quiet: true,
 		overlay: {
 			warnings: true,
 			errors: true
@@ -21,11 +25,23 @@ function devServer(config: Webpack.Configuration) {
 			ignored: /node_modules/
 		}
 	};
-	const server = new WebpackDevServer(compiler, devServerOptions);
-
-	server.listen(8000, '0.0.0.0', (err: Error) => {
-		if (err) logger.error(err);
-	});
+	getPort(
+		{
+			port: devServerOptions.port,
+		},
+		(err, port) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+			logger.watch("local:  ", `http://localhost:${port}/`);
+			logger.watch("network:  ", `http://${address.ip()}:${port}/`);
+			const server = new WebpackDevServer(compiler, devServerOptions);
+			server.listen(port, devServerOptions.host, (err: Error) => {
+				if (err) logger.error(err);
+			});
+		}
+	);
 }
 function build(config: Webpack.Configuration) {
 	return new Promise((resolve, reject) => {

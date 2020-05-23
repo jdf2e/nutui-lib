@@ -1,6 +1,6 @@
 {
   "name": "@nutui/cli",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "nutui cli",
   "main": "./dist_cli/bin/index.js",
   "files": [
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jdf2e/nutui-lib/tree/master/cli"
-  },        
+  },
   "bin": {
     "nutui-cli": "./dist_cli/bin/index.js"
   },
@@ -36,6 +36,7 @@
     "@nutui/markdown-to-vue": "^0.0.4",
     "@types/node": "^13.1.1",
     "@vue/test-utils": "1.0.0-beta.25",
+    "address": "^1.1.2",
     "autoprefixer": "^9.7.3",
     "babel-loader": "^8.0.6",
     "cache-loader": "^4.1.0",
@@ -66,6 +67,7 @@
     "nyc": "10.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "path": "^0.12.7",
+    "portfinder": "^1.0.26",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-url": "^8.0.0",
