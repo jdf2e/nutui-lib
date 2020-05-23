@@ -1,8 +1,8 @@
 <template>
 	<div :class="['demo-wrapper', { 'in-iframe': inIframe }]">
-		<router-view class="demo-nav" name="demonav" v-if="!inIframe" v-transition></router-view>
+		<router-view class="demo-nav" name="demonav" v-if="!inIframe"></router-view>
 		<keep-alive include="index">
-			<router-view class="demo" name="main" v-transition></router-view>
+			<router-view class="demo" name="main"></router-view>
 		</keep-alive>
 	</div>
 </template>
