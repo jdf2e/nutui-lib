@@ -42,7 +42,6 @@ export function packageDisperseConfig() {
 				filename: '[name]/[name].css',
 			}),
 			new OptimizeCSSAssetsPlugin(),
-			// 处理脚本
 			new CopyWebpackPlugin([
 				{
 					from: ROOT_PACKAGE_PATH('src/'),

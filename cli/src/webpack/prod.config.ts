@@ -1,7 +1,8 @@
 import Webpack from 'webpack';
 import merge from 'webpack-merge';
 import { devConfig } from './dev.config';
-import { ROOT_PACKAGE_PATH } from '../util/dic';
+import { ROOT_PACKAGE_PATH, ROOT_CLI_PATH } from '../util/dic';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 export const prodConfig: Webpack.Configuration = merge(devConfig, {
 	mode: 'production',
@@ -14,6 +15,18 @@ export const prodConfig: Webpack.Configuration = merge(devConfig, {
 		minimize: true
 	},
 	plugins: [
-		new OptimizeCSSAssetsPlugin()
+		new OptimizeCSSAssetsPlugin(),
+		new CopyWebpackPlugin([
+			{
+				from: ROOT_CLI_PATH('site/demo/asset/img/favicon.ico'),
+				to: ROOT_PACKAGE_PATH('dist/sites/')
+			}
+		]),
+		new CopyWebpackPlugin([
+			{
+				from: ROOT_CLI_PATH('site/demo/asset/img/pwa_logo.png'),
+				to: ROOT_PACKAGE_PATH('dist/sites/img/')
+			}
+		]),
 	]
 });
