@@ -12,7 +12,10 @@ export const prodConfig: Webpack.Configuration = merge(devConfig, {
 		chunkFilename: 'js/[name].[chunkhash].chunk.min.js'
 	},
 	optimization: {
-		minimize: true
+		minimize: true,
+		splitChunks:{
+            automaticNameDelimiter: '_',
+        }
 	},
 	plugins: [
 		new OptimizeCSSAssetsPlugin(),
