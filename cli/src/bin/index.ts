@@ -1,20 +1,22 @@
 #!/usr/bin/env node
-import { setNodeEnv } from '../util';
+import { ROOT_CLI_PATH, ROOT_PACKAGE_PATH } from '../util/dic';
+const config = require(ROOT_PACKAGE_PATH('package.json'));
+const semver = require('semver')
+import { setNodeEnv, setVersion } from '../util';
 process.argv[2] === 'dev' ? setNodeEnv('development') : setNodeEnv('production');
+semver.major(config.version) == 2 ? setVersion('2') : setVersion('3');
 import program from 'commander';
 import { dev } from '../commands/dev';
 import { build } from '../commands/build';
-import { lint } from '../commands/lint';
 import { buildSite } from '../commands/build-site';
 import { clean } from '../commands/clean';
 import { createComponent } from '../commands/createComponent';
 import { commitLint } from '../commands/commitLint';
 import { test } from '../commands/test';
 import { release } from '../commands/npmPublish';
-import { ROOT_CLI_PATH } from '../util/dic';
+const config_cli = require(ROOT_CLI_PATH('package.json'));
 
-const config = require(ROOT_CLI_PATH('package.json'));
-program.version(`@nutui/cli ${config.version}`, '-v', '--version');
+program.version(`@nutui/cli ${config_cli.version}`, '-v', '--version');
 
 program.command('dev').description('本地调试运行官网和Demo示例').action(dev);
 
@@ -29,8 +31,6 @@ program.command('add').description('新增组件使用该命令').action(createC
 program.command('commit-lint').description('获取校验commit message 的配置文件').action(commitLint);
 
 program.command('test').description('运行单元测试').action(test);
-
-program.command('lint').description('运行stylelint和eslint').action(lint);
 
 program.command('release').description('发布版本...待开发').action(release);
 

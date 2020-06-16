@@ -49,6 +49,7 @@
 					</ul>
 					<select @change="openwindow">
 						<option value="2">2.X</option>
+						<option value="3">3.X</option>
 						<option value="1">1.X</option>
 					</select>
 					<a href="https://github.com/jdf2e/nutui" title="Github" target="_blank" class="github-icon">github</a>
@@ -90,8 +91,15 @@ export default {
 	},
 	methods: {
 		openwindow(val) {
-			if (val.target.value == 1) {
-				window.location.href = ' https://nutui.jd.com/1x/';
+			switch (val.target.value.toString()) {
+				case "1":
+					window.location.href = ' https://nutui.jd.com/1x/';
+					break;
+				case "3":
+					window.location.href = ' https://nutui.jd.com/3x/';
+					break;
+				default:
+					break;
 			}
 		},
 		// threeAnimation() {

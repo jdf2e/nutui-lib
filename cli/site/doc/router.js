@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { packages } from '@/config.json';
-
+import { version } from '@/../package.json';
 import frontCover from './index.vue';
+import frontCover_v3 from './index-v3.vue';
+const semver = require('semver');
 
 const Index = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'info' */ './info.vue');
 const Intro = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'intro' */ './page/intro.vue');
@@ -26,7 +27,7 @@ const routes = [
 	{
 		path: '/index',
 		name: 'frontcover',
-		component: frontCover
+		component: semver.major(version) == 2 ? frontCover:frontCover_v3
 	},
 	{
 		path: '/intro',
@@ -82,19 +83,6 @@ contexts.keys().forEach(component => {
 		name: componentEntity.name
 	});
 })
-//组件md文件展示
-// packages.map(item => {
-// 	if (item.showDemo === false) return;
-// 	const pkgName = item.name.toLowerCase();
-// 	routes.push({
-// 		path: '/' + item.name,
-// 		components: {
-// 			default: Index,
-// 			main: () => import('./view/' + pkgName + '.vue')
-// 		},
-// 		name: item.name
-// 	});
-// });
 
 const router = new VueRouter({
 	routes,
