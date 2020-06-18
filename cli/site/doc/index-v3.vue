@@ -1,21 +1,18 @@
 <template>
   <div class="container">
+    <span class="nut-big"></span>
+    <span class="circle-big"></span>
+    <span class="circle"></span>
+    <span class="square"></span>
+    <span class="nut-small"></span>
     <template v-if="notWebgl">
       <div class="css-animation">
-        <span class="blue-bg"></span>
-        <span class="phone"></span>
-        <span class="goods"></span>
-        <span class="nut"></span>
-        <span class="people"></span>
-        <span class="flower">
-          <span class="leaf_2"></span>
-          <span class="leaf_1"></span>
-          <span class="leaf_4"></span>
-          <span class="leaf_3"></span>
-
-          <span class="flowerpot"></span>
-        </span>
-        <span class="fengche"></span>
+        <span class="backcolor"></span>
+        <span class="phone1"></span>
+        <span class="phone2"></span>
+        <span class="phone3"></span>
+        <span class="phone4"></span>
+        <span class="phone5"></span>
       </div>
     </template>
     <template v-else>
@@ -49,7 +46,7 @@
               </a>
             </li>
           </ul>
-          <select @change="openwindow">
+          <select class="v3-select" @change="openwindow">
             <option value="3">3.X</option>
             <option value="2">2.X</option>
             <option value="1">1.X</option>
@@ -59,8 +56,8 @@
       </div>
       <div class="content">
         <div class="mouseDiv" id="mouseDiv"></div>
-        <p class="title">NutUI 3</p>
-        <p class="sub-title">一套京东风格的轻量级移动端Vue组件库 3</p>
+        <p class="title">Nut UI</p>
+        <p class="sub-title">一套京东风格的轻量级移动端Vue组件库</p>
         <a href="#/intro" class="blue-btn">开始使用</a>
         <a href="javascript:;" class="qrcode btn">
           扫码体验
@@ -138,63 +135,171 @@ export default {
   }
 }
 
-@keyframes fadeInRightAndTop {
+@keyframes phoneIn {
   from {
     opacity: 0;
-    transform: translate(100%, 100%, 0);
-    transform: scale3d(1, 1, 1);
+    transform: translate3d(-100%, 100%, 0);
   }
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    transform: scale3d(1.06, 1.06, 1.06);
-  }
+  }  
 }
-@keyframes leafShake {
-  form,
+
+@keyframes leftToRight {
+  from {
+    transform: translate3d(-20px, 0, 0);
+  }
   to {
+    transform: translate3d(0, 0, 0);
+  }  
+}
+
+@keyframes upToBottom {
+  from {
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }  
+}
+
+@keyframes incline {
+  from {
+    transform: translate3d(-100px, -50px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }  
+}
+
+@keyframes rotateSelf {
+  from {
     transform: rotate(0);
-    transform-origin: bottom;
-  }
-  20%,
-  60% {
-    transform: rotate(2deg);
-    transform-origin: bottom;
-  }
-  40%,
-  80% {
-    transform: rotate(-2deg);
-    transform-origin: bottom;
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
   }
   to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+    transform: rotate(360deg);
+  }  
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: rotate(20deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-}
+
+
 
 .container {
   position: relative;
   min-width: 1260px;
-  height: 870px;
+  height: 100vh;
   overflow: hidden;
+  .nut-big {
+    position: absolute;
+    top: -14.2vh;
+    left: 57.8vh;
+    width: 59.7vh;
+    height: 59.7vh;
+    background: url(./asset/css/i/v3-pic/nut-big.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .circle-big {
+    position: absolute;
+    margin-left: -28.7vh;
+    top: 50.6vh;
+    left: 0;
+    width: 46.7vh;
+    height: 46.7vh;
+    background: url(./asset/css/i/v3-pic/circle-big.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: leftToRight 2s alternate infinite;
+  }
+  .circle {
+    position: absolute;
+    top: 55vh;
+    margin-left: 54.4vh;
+    left: 0;
+    width: 15.8vh;
+    height: 15.8vh;
+    background: url(./asset/css/i/v3-pic/circle.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: incline 4s alternate infinite both;
+  }
+  .square {
+    position: absolute;
+    left: 46vh;
+    bottom: -10.1vh;
+    width: 22.6vh;
+    height: 22.6vh;
+    background: url(./asset/css/i/v3-pic/square.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: upToBottom 2s alternate infinite both;
+  }
+  .nut-small {
+    position: absolute;
+    bottom: 2.8vh;
+    right: 5.3vh;
+    width: 15.8vh;
+    height: 15.8vh;
+    background: url(./asset/css/i/v3-pic/nut-small.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: rotateSelf 3s linear 1s infinite both;
+  }
+  .backcolor {
+    position: absolute;
+    top: 2.7vh;
+    right: 0;
+    width: 125vh;
+    height: 102vh;
+    background: url(./asset/css/i/v3-pic/backcolor.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+  }
+  .phone1 {
+    position: absolute;
+    right: 13.1vh;
+    top: 14.6vh;
+    width: 43.6vh;
+    height: 46.6vh;
+    background: url(./asset/css/i/v3-pic/phone1.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: phoneIn 0.5s both;
+  }
+  .phone2 {
+    position: absolute;
+    right: 46vh;
+    top: 18.2vh;
+    width: 43.6vh;
+    height: 46.6vh;
+    background: url(./asset/css/i/v3-pic/phone2.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: phoneIn 0.5s 0.1s both;
+  }
+  .phone3 {
+    position: absolute;
+    top: 48.2vh;
+    right: 11.84vh;
+    width: 43.6vh;
+    height: 46.6vh;
+    background: url(./asset/css/i/v3-pic/phone3.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: phoneIn 0.5s 0.2s both;
+  }
+  .phone4 {
+    position: absolute;
+    top: 49.9vh;
+    right: 43.3vh;
+    width: 43.5vh;
+    height: 46.5vh;
+    background: url(./asset/css/i/v3-pic/phone4.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: phoneIn 0.5s 0.3s both;
+  }
+  .phone5 {
+    position: absolute;
+    top: 54vh;
+    right: 75.8vh;
+    width: 43.54vh;
+    height: 46.6vh;
+    background: url(./asset/css/i/v3-pic/phone5.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    animation: phoneIn 0.5s 0.4s both;
+  }
 }
 .wrapper {
   position: absolute;
@@ -217,7 +322,7 @@ export default {
     top: 0;
     right: 14%;
     width: 376px;
-    font-size: 12px;
+    font-size: 14px;
     li {
       float: left;
       width: 70px;
@@ -225,7 +330,7 @@ export default {
       height: 64px;
       line-height: 64px;
       cursor: pointer;
-      color: #fff;
+      color: rgba(51,51,51,1);;
       position: relative;
       & > a {
         display: block;
@@ -233,7 +338,7 @@ export default {
         line-height: 64px;
       }
       a {
-        color: #fff;
+        color: rgba(51,51,51,1);;
         text-decoration: none;
       }
     }
@@ -242,7 +347,7 @@ export default {
       height: 28px;
       margin-top: 18px;
       margin-left: 20px;
-      font-size: 12px;
+      font-size: 14px;
     }
 
     li::before {
@@ -266,13 +371,18 @@ export default {
     li:hover ~ li::before {
       left: 0;
     }
+    .v3-select {
+      border: 1px solid rgba(229,229,229,1);
+    }
     .github-icon {
       display: inline-block;
       height: 26px;
       width: 26px;
       font-size: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 16 16' version='1.1' width='24' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' fill='rgb(255,255,255)' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z'%3E%3C/path%3E%3C/svg%3E")
-        no-repeat;
+      // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 16 16' version='1.1' width='24' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' fill='rgb(255,255,255)' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z'%3E%3C/path%3E%3C/svg%3E")
+      //   no-repeat;
+      background: url(./asset/css/i/v3-pic/github-logo.png) 0 0 no-repeat;
+      background-size: 100% 100%;
       vertical-align: middle;
       position: relative;
       top: -1px;
@@ -331,7 +441,7 @@ export default {
     }
   }
   .content {
-    padding: 15% 0 0 8.8%;
+    padding: 12% 0 0 8.8%;
     z-index: 999;
     position: relative;
     .mouseDiv {
@@ -345,45 +455,45 @@ export default {
       margin-top: -50px;
     }
     .title {
-      font-size: 42px;
+      font-size: 54px;
       color: #333;
       font-weight: bold;
       animation: fadeInLeft 1s both;
     }
     .sub-title {
-      font-size: 24px;
+      font-size: 22px;
       color: #333;
-      padding-top: 30px;
-      padding-bottom: 100px;
+      padding-top: 13px;
+      padding-bottom: 26px;
       animation: fadeInLeft 1s both 0.5s;
     }
     .btn,
     .blue-btn {
-      border: 1px solid rgba(83, 150, 255, 1);
+      border: 1px solid rgba(9,69,255,1);
       background: #fff;
-      color: rgba(83, 150, 255, 1);
-      width: 130px;
-      height: 40px;
-      line-height: 40px;
+      color: rgba(9,69,255,1);;
+      width: 150px;
+      height: 50px;
+      line-height: 50px;
       text-align: center;
       display: inline-block;
-      font-size: 14px;
+      font-size: 18px;
       text-decoration: none;
-      border-radius: 20px;
+      border-radius: 25px;
       animation: fadeInLeft 1s both 1.2s;
       &:hover,
       &:active {
-        border-color: rgba(83, 150, 255, 0.8);
-        color: rgba(83, 150, 255, 0.8);
+        border-color: rgba(9,69,255,0.8);
+        color: rgba(9,69,255,0.8);
       }
     }
     .blue-btn {
       color: #fff;
-      background: rgba(83, 150, 255, 1);
-      margin-right: 40px;
+      background: linear-gradient(130deg, rgba(36,116,255,1) 0%,rgba(4,47,255,1) 100%);;
+      margin-right: 26px;
       &:hover,
       &:active {
-        background: rgba(83, 150, 255, 0.8);
+        background: linear-gradient(130deg, rgba(36,116,255,0.8) 0%,rgba(4,47,255,0.8) 100%);;
         color: rgba(255, 255, 255, 0.8);
       }
     }
@@ -401,7 +511,7 @@ export default {
     }
     a {
       position: absolute; //display: none;
-      top: 44px;
+      top: 50px;
       width: 200px;
       height: 240px;
       transform: scale(0.5);
@@ -446,128 +556,10 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  height: 757px;
-  width: 963px;
+  height: 100%;
+  width: 1140px;
   animation: fadeInRightAndTop 1.2s 1;
   transform: scale3d(1.06, 1.06, 1.06);
-
-  .blue-bg {
-    background: url("//img12.360buyimg.com/uba/jfs/t1/22824/40/3136/6504/5c24a3f4E76fdafde/802d02d1ec5d3d55.png")
-      0 0 no-repeat;
-    height: 757px;
-    width: 963px;
-    background-size: 100% 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .phone {
-    background: url("//img10.360buyimg.com/uba/jfs/t1/19171/19/3175/23282/5c24a440Ee2a94261/45321aeaf173f237.png")
-      0 0 no-repeat;
-    height: 419px;
-    width: 227px;
-    background-size: 100% 100%;
-    position: absolute;
-    right: 350px;
-    top: 250px;
-    display: inline-block;
-  }
-  .goods {
-    background: url("//img14.360buyimg.com/uba/jfs/t1/21115/40/3224/5652/5c24a411E03ef9eb6/83781b97e59da905.png")
-      0 0 no-repeat;
-    height: 165px;
-    width: 117px;
-    background-size: 100% 100%;
-    position: absolute;
-    display: inline-block;
-    top: 500px;
-    right: 710px;
-  }
-  .people {
-    background: url("//img12.360buyimg.com/uba/jfs/t1/9330/16/10894/8662/5c24a42aE708692b3/14455d20eca1ccee.png");
-    width: 184px;
-    height: 334px;
-    background-size: 100% 100%;
-    position: absolute;
-    top: 334px;
-    right: 500px;
-  }
-  .flower {
-    position: absolute;
-    right: 195px;
-    top: 510px;
-    height: 160px;
-    width: 208px;
-    .leaf_1 {
-      position: absolute;
-      background: url(./asset/css/i/leaf_1.png) 0 0 no-repeat;
-      height: 113px;
-      width: 60px;
-      background-size: 100% 100%;
-      bottom: 36px;
-      right: 79px;
-      animation: leafShake 8s infinite;
-    }
-    .leaf_2 {
-      position: absolute;
-      background: url(./asset/css/i/leaf_2.png) 0 0 no-repeat;
-      height: 64px;
-      width: 66px;
-      background-size: 100% 100%;
-      bottom: 36px;
-      right: 35px;
-      animation: leafShake 8s infinite 0.6s;
-    }
-    .leaf_3 {
-      position: absolute;
-      background: url(./asset/css/i/leaf_3.png) 0 0 no-repeat;
-      height: 28px;
-      width: 64px;
-      background-size: 100% 100%;
-      bottom: 38px;
-      right: 42px;
-      //animation:leafShake 3s infinite 0.5s;
-    }
-    .leaf_4 {
-      position: absolute;
-      background: url(./asset/css/i/leaf_4.png) 0 0 no-repeat;
-      height: 113px;
-      width: 99px;
-      background-size: 100% 100%;
-      bottom: 38px;
-      left: 2px;
-      //animation:leafShake 3s infinite 0.2s;
-    }
-    .flowerpot {
-      position: absolute;
-      background: url(./asset/css/i/flowerpot.png) 0 0 no-repeat;
-      height: 42px;
-      width: 130px;
-      bottom: 0;
-      right: 5px;
-      background-size: 100% 100%;
-    }
-  }
-  .nut {
-    position: absolute;
-    height: 46px;
-    width: 46px;
-    background: url(./asset/css/i/nut-icon.png) 0 0 no-repeat;
-    background-size: 100% 100%;
-    top: 308px;
-    right: 493px;
-    animation: fadeInRight 2s both;
-  }
-  .fengche {
-    position: absolute;
-    background: url(./asset/css/i/fengche.png) 0 0 no-repeat;
-    background-size: 100% 100%;
-    width: 679px;
-    height: 476px;
-    top: 195px;
-    right: 180px;
-    animation: fadeIn 2s both 2s;
-  }
 }
 @media screen and (max-width: 1500px) {
   .css-animation {
