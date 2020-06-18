@@ -34,6 +34,7 @@ function devServer(config: Webpack.Configuration) {
 				console.log(err);
 				return;
 			}
+			devServerOptions.port = port;
 			logger.watch("local:  ", `http://localhost:${port}/`);
 			logger.watch("network:  ", `http://${address.ip()}:${port}/`);
 			const server = new WebpackDevServer(compiler, devServerOptions);
