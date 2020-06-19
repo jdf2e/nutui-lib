@@ -1,7 +1,7 @@
 // 创建模板
 
 const inquirer = require('inquirer');
-import { ROOT_CLI_PATH, ROOT_PACKAGE_PATH } from '../util/dic';
+import {  ROOT_PACKAGE_PATH } from '../util/dic';
 const conf = require(ROOT_PACKAGE_PATH('src/config.json'));
 const path = require('path');
 const fs = require('fs');
@@ -100,6 +100,12 @@ function init() {
 				default: true,
 			},
 			{
+				type: 'confirm',
+				name: 'showTest',
+				message: '是否需要单元测试页面?',
+				default: true,
+			},
+			{
 				type: 'input',
 				name: 'author',
 				message: '组件作者(可署化名):',
@@ -168,7 +174,27 @@ export default {
 		});
 	});
 }
-
+function createTest() {
+	return new Promise((resolve, reject) => {
+		const nameLc = newCpt.name.toLowerCase();
+		let content = `import { shallowMount, mount } from '@vue/test-utils'
+import ${newCpt.name} from '../${nameLc}.vue';
+import Vue from 'vue';
+		
+describe('${newCpt.name}.vue', () => {
+			
+});`;
+		const dirPath = path.join(ROOT_PACKAGE_PATH('src/packages/' + nameLc+'/__test__'));
+		const filePath = path.join(dirPath, `${nameLc}.spec.js`);
+		if (!fs.existsSync(dirPath)) {
+			fs.mkdirSync(dirPath);
+		}
+		fs.writeFile(filePath, content, (err: any) => {
+			if (err) throw err;
+			resolve(`生成test文件成功`);
+		});
+	});
+}
 function createDoc() {
 	return new Promise((resolve, reject) => {
 		const nameLc = newCpt.name.toLowerCase();
@@ -345,6 +371,9 @@ export default ${newCpt.name}`;
 		})
 		.then(() => {
 			return createDoc();
+		})
+		.then(() => {
+			return createTest();
 		})
 		.then(() => {
 			return addToPackageJson();
