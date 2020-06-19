@@ -1,6 +1,6 @@
 <template>
 	<div class="search-box">
-		<input @focus="onfocus" @keyup="choseList" v-model="searchVal" class="search" type="text" placeholder="在nut.ui中搜索" />
+		<input @focus="onfocus" @keyup="choseList" v-model="searchVal" class="search" type="text" placeholder="搜索组件..." />
 		<!-- <transition name="fade"> -->
 		<ul class="search-list" v-if="searchList.length > 0">
 			<li :class="searchCurName == item.name ? 'cur' : ''" @click="checklist(item)" v-for="(item, index) in searchList" :key="index">
