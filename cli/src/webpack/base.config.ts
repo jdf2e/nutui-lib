@@ -23,19 +23,25 @@ export const baseConfig: Webpack.Configuration = {
 			isTest()
 				? {}
 				: {
-						test: /\.(sa|sc|c)ss$/,
-						use: [
-							isDev() ? 'style-loader' : MiniCssExtractPlugin.loader,
-							'css-loader',
-							'postcss-loader',
-							{
-								loader: 'sass-loader',
-								options: {
-									prependData: `@import "@/styles/index.scss"; `
-								}
+					test: /\.(sa|sc|c)ss$/,
+					use: [
+						isDev() ? 'style-loader' : {
+							loader: MiniCssExtractPlugin.loader,
+							options: {
+								publicPath: '../',
+							},
+
+						},
+						'css-loader',
+						'postcss-loader',
+						{
+							loader: 'sass-loader',
+							options: {
+								prependData: `@import "@/styles/index.scss"; `
 							}
-						]
-				  },
+						}
+					]
+				},
 			{
 				test: /\.vue$/,
 				use: [

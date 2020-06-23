@@ -648,7 +648,7 @@ export default {
 		font-size: 0;
 		position: relative;
 		s {
-			background: url(./asset/css/i/nut.png) 0 0 no-repeat;
+			background: url(./asset/img/nut.png) 0 0 no-repeat;
 			background-size: contain;
 			height: 46px;
 			width: 120px;
@@ -668,7 +668,7 @@ export default {
 		&:before {
 			content: '';
 			display: inline-block;
-			background: url(./asset/css/i/search.png) 0 0 no-repeat;
+			background: url(./asset/img/search.png) 0 0 no-repeat;
 			height: 22px;
 			width: 22px;
 			position: absolute;
@@ -763,7 +763,7 @@ export default {
 			transform: scale(0.5);
 			transform-origin: 50% top 0;
 			transition: all 100ms ease-in-out 50ms;
-			background: url('./asset/css/i/kuang.png') no-repeat;
+			background: url('./asset/img/kuang.png') no-repeat;
 			background-size: 200px;
 			text-decoration: none;
 			font-style: normal;
@@ -853,7 +853,7 @@ export default {
 		width: 208px;
 		.leaf_1 {
 			position: absolute;
-			background: url(./asset/css/i/leaf_1.png) 0 0 no-repeat;
+			background: url(./asset/img/leaf_1.png) 0 0 no-repeat;
 			height: 113px;
 			width: 60px;
 			background-size: 100% 100%;
@@ -863,7 +863,7 @@ export default {
 		}
 		.leaf_2 {
 			position: absolute;
-			background: url(./asset/css/i/leaf_2.png) 0 0 no-repeat;
+			background: url(./asset/img/leaf_2.png) 0 0 no-repeat;
 			height: 64px;
 			width: 66px;
 			background-size: 100% 100%;
@@ -873,7 +873,7 @@ export default {
 		}
 		.leaf_3 {
 			position: absolute;
-			background: url(./asset/css/i/leaf_3.png) 0 0 no-repeat;
+			background: url(./asset/img/leaf_3.png) 0 0 no-repeat;
 			height: 28px;
 			width: 64px;
 			background-size: 100% 100%;
@@ -883,7 +883,7 @@ export default {
 		}
 		.leaf_4 {
 			position: absolute;
-			background: url(./asset/css/i/leaf_4.png) 0 0 no-repeat;
+			background: url(./asset/img/leaf_4.png) 0 0 no-repeat;
 			height: 113px;
 			width: 99px;
 			background-size: 100% 100%;
@@ -893,7 +893,7 @@ export default {
 		}
 		.flowerpot {
 			position: absolute;
-			background: url(./asset/css/i/flowerpot.png) 0 0 no-repeat;
+			background: url(./asset/img/flowerpot.png) 0 0 no-repeat;
 			height: 42px;
 			width: 130px;
 			bottom: 0;
@@ -905,7 +905,7 @@ export default {
 		position: absolute;
 		height: 46px;
 		width: 46px;
-		background: url(./asset/css/i/nut-icon.png) 0 0 no-repeat;
+		background: url(./asset/img/nut-icon.png) 0 0 no-repeat;
 		background-size: 100% 100%;
 		top: 308px;
 		right: 493px;
@@ -913,7 +913,7 @@ export default {
 	}
 	.fengche {
 		position: absolute;
-		background: url(./asset/css/i/fengche.png) 0 0 no-repeat;
+		background: url(./asset/img/fengche.png) 0 0 no-repeat;
 		background-size: 100% 100%;
 		width: 679px;
 		height: 476px;

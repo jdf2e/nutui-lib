@@ -55,7 +55,7 @@ export const devConfig: Webpack.Configuration = merge(baseConfig, {
 		}),
 		new HtmlWebpackPlugin({
 			template: ROOT_CLI_PATH('site/doc/index.html'),
-			filename: 'index.html',
+			filename: 'default.html',
 			hash: true, //防止缓存
 			inject: true,
 			chunks: ['common_chunks', 'nutui-doc'],

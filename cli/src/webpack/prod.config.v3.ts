@@ -7,7 +7,7 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 export const prodConfig: Webpack.Configuration = merge(devConfig, {
 	mode: 'production',
 	output: {
-		path: ROOT_PACKAGE_PATH('dist/sites/3x'),
+		path: ROOT_PACKAGE_PATH('dist/3x'),
 		filename: 'js/[name].[hash].bundle.min.js',
 		chunkFilename: 'js/[name].[chunkhash].chunk.min.js'
 	},
@@ -22,13 +22,13 @@ export const prodConfig: Webpack.Configuration = merge(devConfig, {
 		new CopyWebpackPlugin([
 			{
 				from: ROOT_CLI_PATH('site/demo/asset/img/favicon.ico'),
-				to: ROOT_PACKAGE_PATH('dist/sites/3x/')
+				to: ROOT_PACKAGE_PATH('dist/3x/')
 			}
 		]),
 		new CopyWebpackPlugin([
 			{
 				from: ROOT_CLI_PATH('site/demo/asset/img/pwa_logo.png'),
-				to: ROOT_PACKAGE_PATH('dist/sites/3x/img/')
+				to: ROOT_PACKAGE_PATH('dist/3x/img/')
 			}
 		]),
 	]

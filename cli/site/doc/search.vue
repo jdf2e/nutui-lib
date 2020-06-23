@@ -103,7 +103,7 @@ export default {
 	font-size: 14px;
 	color: #666;
 	border: none;
-	background: url(./asset/css/i/sreach.png) no-repeat left center;
+	background: url(./asset/img/sreach.png) no-repeat left center;
 	padding-left: 45px;
 	&:focus {
 		outline: none;

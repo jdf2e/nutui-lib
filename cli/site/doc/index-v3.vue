@@ -196,7 +196,7 @@ export default {
     left: 57.8vh;
     width: 59.7vh;
     height: 59.7vh;
-    background: url(./asset/css/i/v3-pic/nut-big.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-nut-big.png) 0 0 no-repeat;
     background-size: 100% 100%;
   }
   .circle-big {
@@ -206,7 +206,7 @@ export default {
     left: 0;
     width: 46.7vh;
     height: 46.7vh;
-    background: url(./asset/css/i/v3-pic/circle-big.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-circle-big.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: leftToRight 2s alternate infinite;
   }
@@ -217,7 +217,7 @@ export default {
     left: 0;
     width: 15.8vh;
     height: 15.8vh;
-    background: url(./asset/css/i/v3-pic/circle.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-circle.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: incline 4s alternate infinite both;
   }
@@ -227,7 +227,7 @@ export default {
     bottom: -10.1vh;
     width: 22.6vh;
     height: 22.6vh;
-    background: url(./asset/css/i/v3-pic/square.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-square.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: upToBottom 2s alternate infinite both;
   }
@@ -237,7 +237,7 @@ export default {
     right: 5.3vh;
     width: 15.8vh;
     height: 15.8vh;
-    background: url(./asset/css/i/v3-pic/nut-small.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-nut-small.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: rotateSelf 3s linear 1s infinite both;
   }
@@ -247,7 +247,7 @@ export default {
     right: 0;
     width: 125vh;
     height: 102vh;
-    background: url(./asset/css/i/v3-pic/backcolor.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-backcolor.png) 0 0 no-repeat;
     background-size: 100% 100%;
   }
   .phone1 {
@@ -256,7 +256,7 @@ export default {
     top: 14.6vh;
     width: 43.6vh;
     height: 46.6vh;
-    background: url(./asset/css/i/v3-pic/phone1.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-phone1.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: phoneIn 0.5s both;
   }
@@ -266,7 +266,7 @@ export default {
     top: 18.2vh;
     width: 43.6vh;
     height: 46.6vh;
-    background: url(./asset/css/i/v3-pic/phone2.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-phone2.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: phoneIn 0.5s 0.1s both;
   }
@@ -276,7 +276,7 @@ export default {
     right: 11.84vh;
     width: 43.6vh;
     height: 46.6vh;
-    background: url(./asset/css/i/v3-pic/phone3.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-phone3.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: phoneIn 0.5s 0.2s both;
   }
@@ -286,7 +286,7 @@ export default {
     right: 43.3vh;
     width: 43.5vh;
     height: 46.5vh;
-    background: url(./asset/css/i/v3-pic/phone4.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-phone4.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: phoneIn 0.5s 0.3s both;
   }
@@ -296,7 +296,7 @@ export default {
     right: 75.8vh;
     width: 43.54vh;
     height: 46.6vh;
-    background: url(./asset/css/i/v3-pic/phone5.png) 0 0 no-repeat;
+    background: url(./asset/img/v3-phone5.png) 0 0 no-repeat;
     background-size: 100% 100%;
     animation: phoneIn 0.5s 0.4s both;
   }
@@ -381,7 +381,7 @@ export default {
       font-size: 0;
       // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 16 16' version='1.1' width='24' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' fill='rgb(255,255,255)' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z'%3E%3C/path%3E%3C/svg%3E")
       //   no-repeat;
-      background: url(./asset/css/i/v3-pic/github-logo.png) 0 0 no-repeat;
+      background: url(./asset/img/v3-github-logo.png) 0 0 no-repeat;
       background-size: 100% 100%;
       vertical-align: middle;
       position: relative;
@@ -402,7 +402,7 @@ export default {
     font-size: 0;
     position: relative;
     s {
-      background: url(./asset/css/i/nut.png) 0 0 no-repeat;
+      background: url(./asset/img/nut.png) 0 0 no-repeat;
       background-size: contain;
       height: 46px;
       width: 120px;
@@ -422,7 +422,7 @@ export default {
     &:before {
       content: "";
       display: inline-block;
-      background: url(./asset/css/i/search.png) 0 0 no-repeat;
+      background: url(./asset/img/search.png) 0 0 no-repeat;
       height: 22px;
       width: 22px;
       position: absolute;
@@ -517,7 +517,7 @@ export default {
       transform: scale(0.5);
       transform-origin: 50% top 0;
       transition: all 100ms ease-in-out 50ms;
-      background: url("./asset/css/i/kuang.png") no-repeat;
+      background: url("./asset/img/kuang.png") no-repeat;
       background-size: 200px;
       text-decoration: none;
       font-style: normal;
