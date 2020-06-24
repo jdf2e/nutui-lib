@@ -17,6 +17,7 @@ function devServer(config: Webpack.Configuration) {
 		hotOnly: true,
 		inline: true,
 		quiet: true,
+		index: 'default.html',
 		overlay: {
 			warnings: true,
 			errors: true

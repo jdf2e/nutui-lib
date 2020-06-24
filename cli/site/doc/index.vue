@@ -617,7 +617,7 @@ export default {
 			left: 0;
 			transition-delay: 0.1s;
 			border-bottom-color: #fff;
-			z-index: -1;
+			z-index: 1;
 		}
 		li:hover ~ li::before {
 			left: 0;
