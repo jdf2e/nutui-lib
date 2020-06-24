@@ -93,7 +93,7 @@ export default {
 			searchCurName: '',
 			searchIndex: 0,
 			codeurl: '',
-			demourl: location.origin + location.pathname.replace('/default.html','') + 'demo.html#/'
+			demourl: location.origin + location.pathname.replace('/default.html','/') + 'demo.html#/'
 		};
 	},
 	watch: {
