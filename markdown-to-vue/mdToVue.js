@@ -52,7 +52,7 @@ class mdVue {
 					if (JSON.stringify(res) != '{}') {
 						//有变动清除当前entry缓存,重新渲染
 						rimraf(_that.cachePath, err => {
-							console.log(err);
+							// console.log(err);
 							resolve();
 						});
 					} else {

@@ -89,7 +89,7 @@ class contrast {
 					_that.oldHash = JSON.parse(data);
 					reslove();
 				} else {
-					console.error('There are no cached files in your locality');
+					// console.error('There are no cached files in your locality');
 					reject();
 				}
 			});
@@ -122,7 +122,7 @@ class contrast {
 				if (err) {
 					fs.mkdir(outPath, (err) => {
 						if (err) {
-							reject(err);
+							// reject(err);
 						} else {
 							resolve(true);
 						}
