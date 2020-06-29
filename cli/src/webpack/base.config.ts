@@ -50,7 +50,7 @@ export const baseConfig: Webpack.Configuration = {
 						loader: 'vue-loader',
 						options: {
 							loaders: {
-								sass: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
+								sass: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
 							}
 						}
 					}
