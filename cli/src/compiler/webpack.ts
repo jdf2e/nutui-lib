@@ -21,9 +21,6 @@ function devServer(config: Webpack.Configuration) {
 		overlay: {
 			warnings: true,
 			errors: true
-		},
-		watchOptions: {
-			ignored: /node_modules/
 		}
 	};
 	getPort(
