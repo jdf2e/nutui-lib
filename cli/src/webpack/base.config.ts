@@ -5,6 +5,7 @@ import { ROOT_CLI_PATH, ROOT_PACKAGE_PATH } from '../util/dic';
 import { isDev, isTest } from '../util';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const config = require(ROOT_PACKAGE_PATH('package.json'));
+const cli_config = require(ROOT_CLI_PATH('package.json'));
 export const baseConfig: Webpack.Configuration = {
 	stats: 'errors-only',
 	output: {
@@ -89,7 +90,7 @@ Released under the MIT License.`
 		}),
 		new VueLoaderPlugin(),
 		new WebpackBar({
-			name: 'NutUI CLI',
+			name: `NutUI CLI v${cli_config.version}`,
 			color: '#5396ff'
 		})
 	]
