@@ -34,7 +34,7 @@
 					</div>
 					<ul class="l-2" v-if="cur.indexOf(nameObj.name) > -1">
 						<template v-for="cpt in nameObj.ary">
-							<li v-on:click.stop="listCheck(cpt)" :class="curName == cpt.name ? 'curs' : ''" :key="cpt.name" v-if="cpt.showDemo">
+							<li v-on:click.stop="listCheck(cpt)" :class="curName == cpt.name.toLowerCase() ? 'curs' : ''" :key="cpt.name" v-if="cpt.showDemo">
 								<router-link :to="{ name: cpt.name.toLowerCase() }">
 									{{ cpt.name }}
 									<span>{{ cpt.chnName }}</span>
