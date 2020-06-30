@@ -152,7 +152,7 @@ function createDemo() {
 	return new Promise((resolve, reject) => {
 		const nameLc = newCpt.name.toLowerCase();
 		let content = `<template>
-    <div class="container"></div>
+    <div class="demo-list"></div>
 </template>
 <script>
 export default {

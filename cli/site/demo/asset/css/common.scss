@@ -14,6 +14,7 @@ body {
 
 h4 {
 	margin: 20px 0 10px;
+	font-family: PingFangSC-Medium;
 }
 
 .demo-list {
@@ -21,7 +22,21 @@ h4 {
 	padding-right: 0;
 	overflow: hidden;
 	h4 {
-		padding: 0 8px;
+		font-size: 15px;
+		padding: 0 16px;
+		box-sizing: border-box;
+	}
+	p {
+		padding: 0 16px;
+		margin: 5px 0px;
+	}
+}
+.demo-list-pd {
+	padding-left: 16px;
+	padding-right: 16px;
+	overflow: hidden;
+	h4 {
+		padding: 0;
 		box-sizing: border-box;
 	}
 }
