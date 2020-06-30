@@ -32,7 +32,8 @@
 							</a>
 						</li>
 						<li>
-							<select @change="openwindow">
+							<select @change="openwindow" v-model="currentVersion">
+								<option value="3">3.X</option>
 								<option value="2">2.X</option>
 								<option value="1">1.X</option>
 							</select>
@@ -113,11 +114,24 @@ export default {
 			}
 		}
 	},
+	mounted() {
+		const semver = require("semver");
+    	this.currentVersion = semver.major(version);
+	},
 	methods: {
 		openwindow(val) {
-			if (val.target.value == 1) {
-				window.location.href = 'https://nutui.jd.com/1x/';
+			switch (val.target.value.toString()) {
+				case "1":
+					window.location.href = 'https://nutui.jd.com/1x/';
+					break;
+				case "2":
+					window.location.href = ' https://nutui.jd.com/';
+					break;
+				case "3":
+					window.location.href = ' https://nutui.jd.com/3x/';
+					break;
 			}
+			
 		},
 		choseList(e) {
 			let searchIndex = this.searchIndex;

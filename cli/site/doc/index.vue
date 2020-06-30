@@ -604,20 +604,17 @@ export default {
 		li::before {
 			content: '';
 			position: absolute;
-			top: 0;
-			left: 100%;
+			bottom: 0;
+			left: 0;
 			width: 0;
-			height: 100%;
+			height: 2px;
 			border-bottom: 2px solid #fff;
 			transition: 0.2s all linear;
 		}
 		li:hover:before {
 			width: 100%;
-			top: 0;
-			left: 0;
 			transition-delay: 0.1s;
 			border-bottom-color: #fff;
-			z-index: 1;
 		}
 		li:hover ~ li::before {
 			left: 0;
