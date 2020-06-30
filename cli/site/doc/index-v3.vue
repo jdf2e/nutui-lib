@@ -488,6 +488,7 @@ export default {
       }
     }
     .blue-btn {
+      border:none;
       color: #fff;
       background: linear-gradient(130deg, rgba(36,116,255,1) 0%,rgba(4,47,255,1) 100%);;
       margin-right: 26px;
