@@ -4,8 +4,8 @@ import { VueLoaderPlugin } from 'vue-loader';
 import { ROOT_CLI_PATH, ROOT_PACKAGE_PATH } from '../util/dic';
 import { isDev, isTest } from '../util';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-const config = require(ROOT_PACKAGE_PATH('package.json'));
-const cli_config = require(ROOT_CLI_PATH('package.json'));
+const nutui_config = require(ROOT_PACKAGE_PATH('package.json'));
+const nutui_cli_config = require(ROOT_CLI_PATH('package.json'));
 export const baseConfig: Webpack.Configuration = {
 	stats: 'errors-only',
 	output: {
@@ -84,13 +84,13 @@ export const baseConfig: Webpack.Configuration = {
 	},
 	plugins: [
 		new Webpack.BannerPlugin({
-			banner: `NutUI v${config.version} - [filebase], [hash], ${new Date()}
+			banner: `NutUI v${nutui_config.version} - [filebase], [hash], ${new Date()}
 (c) 2017-2020 JDC
 Released under the MIT License.`
 		}),
 		new VueLoaderPlugin(),
 		new WebpackBar({
-			name: `NutUI CLI v${cli_config.version}`,
+			name: `NutUI CLI v${nutui_cli_config.version}`,
 			color: '#5396ff'
 		})
 	]

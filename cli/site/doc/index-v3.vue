@@ -46,11 +46,7 @@
               </a>
             </li>
           </ul>
-          <select class="v3-select" @change="openwindow">
-            <option value="3">3.X</option>
-            <option value="2">2.X</option>
-            <option value="1">1.X</option>
-          </select>
+          <doc-version class="v3-select"></doc-version>
           <a href="https://github.com/jdf2e/nutui" title="Github" target="_blank" class="github-icon">github</a>
         </div>
       </div>
@@ -86,20 +82,7 @@ export default {
   components: {
     search
   },
-  methods: {
-    openwindow(val) {
-      switch (val.target.value.toString()) {
-        case "1":
-          window.location.href = " https://nutui.jd.com/1x/";
-          break;
-        case "2":
-          window.location.href = " https://nutui.jd.com/";
-          break;
-        default:
-          break;
-      }
-    }
-  },
+  methods: {},
   watch: {},
   computed: {},
   created() {},

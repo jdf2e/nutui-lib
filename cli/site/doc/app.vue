@@ -32,11 +32,7 @@
 							</a>
 						</li>
 						<li>
-							<select @change="openwindow" v-model="currentVersion">
-								<option value="3">3.X</option>
-								<option value="2">2.X</option>
-								<option value="1">1.X</option>
-							</select>
+							<doc-version></doc-version>
 						</li>
 						<li class="github">
 							<a target="_back" href="https://github.com/jdf2e/nutui"></a>
@@ -114,25 +110,8 @@ export default {
 			}
 		}
 	},
-	mounted() {
-		const semver = require("semver");
-    	this.currentVersion = semver.major(version);
-	},
+	mounted() {},
 	methods: {
-		openwindow(val) {
-			switch (val.target.value.toString()) {
-				case "1":
-					window.location.href = 'https://nutui.jd.com/1x/';
-					break;
-				case "2":
-					window.location.href = ' https://nutui.jd.com/';
-					break;
-				case "3":
-					window.location.href = ' https://nutui.jd.com/3x/';
-					break;
-			}
-			
-		},
 		choseList(e) {
 			let searchIndex = this.searchIndex;
 			if (e.keyCode == 40) {

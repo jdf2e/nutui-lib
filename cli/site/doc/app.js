@@ -21,7 +21,8 @@ Vue.prototype.copy = copy;
 Vue.prototype.qrcode = codes;
 
 Vue.config.productionTip = false;
-
+import Version from './compents/version/version.vue';
+Vue.component(Version.name, Version);
 new Vue({
 	el: '#doc',
 	router,

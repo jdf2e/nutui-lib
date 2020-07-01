@@ -1,5 +1,5 @@
 export type NodeEnv = 'production' | 'development' | 'test';
-export type Version = '2' | '3';
+export type Version = '2' | '2.2.3x';
 export function setNodeEnv(value: NodeEnv) {
 	process.env.NODE_ENV = value;
 }
