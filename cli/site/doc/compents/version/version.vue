@@ -1,6 +1,6 @@
 <template>
   <select @change="openwindow" v-model="currentVersion">
-    <option value="2.5.x">2.5.x</option>
+    <option value="3.x">3.x</option>
     <option value="2.x">2.x</option>
     <option value="1">1.x</option>
   </select>
@@ -17,11 +17,11 @@ export default {
   },
   mounted() {
     if (
-      semver.satisfies(semver.valid(semver.coerce(version)), "<2.5.0")
+      semver.satisfies(semver.valid(semver.coerce(version)), "<3.0.0")
     ) {
       this.currentVersion = "2.x";
     } else {
-      this.currentVersion = "2.5.x";
+      this.currentVersion = "3.x";
     }
   },
   methods: {

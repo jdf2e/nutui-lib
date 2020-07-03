@@ -4,7 +4,7 @@ const config = require(ROOT_PACKAGE_PATH('package.json'));
 const semver = require('semver')
 import { setNodeEnv, setVersion } from '../util';
 process.argv[2] === 'dev' ? setNodeEnv('development') : setNodeEnv('production');
-semver.satisfies(semver.valid(semver.coerce(config.version)), '<2.5.0') ? setVersion('2') : setVersion('2.5.x');
+semver.satisfies(semver.valid(semver.coerce(config.version)), '<3.0.0') ? setVersion('2') : setVersion('3');
 import program from 'commander';
 import { dev } from '../commands/dev';
 import { build } from '../commands/build';

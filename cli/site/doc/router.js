@@ -27,7 +27,7 @@ const routes = [
 	{
 		path: '/index',
 		name: 'frontcover',
-		component: semver.satisfies(semver.valid(semver.coerce(version)), '<2.5.0') ? frontCover : frontCover_v3
+		component: semver.satisfies(semver.valid(semver.coerce(version)), '<3.0.0') ? frontCover : frontCover_v3
 	},
 	{
 		path: '/intro',
