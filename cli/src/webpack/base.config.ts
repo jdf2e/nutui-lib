@@ -84,7 +84,7 @@ export const baseConfig: Webpack.Configuration = {
 	},
 	plugins: [
 		new Webpack.BannerPlugin({
-			banner: `NutUI v${nutui_config.version} - [filebase], [hash], ${new Date()}
+			banner: `${nutui_config.name} v${nutui_config.version} - [filebase], [hash], ${new Date()}
 (c) 2017-2020 JDC
 Released under the MIT License.`
 		}),

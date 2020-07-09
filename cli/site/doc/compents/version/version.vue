@@ -1,13 +1,12 @@
 <template>
   <select @change="openwindow" v-model="currentVersion">
-    <option value="3.x">3.x</option>
+    <option value="jdl">jdl</option>
     <option value="2.x">2.x</option>
     <option value="1">1.x</option>
   </select>
 </template>
 <script>
-import { version } from "@/../package.json";
-const semver = require("semver");
+import { version, name } from "@/../package.json";
 export default {
   name: "doc-version",
   data() {
@@ -16,12 +15,10 @@ export default {
     };
   },
   mounted() {
-    if (
-      semver.satisfies(semver.valid(semver.coerce(version)), "<3.0.0")
-    ) {
-      this.currentVersion = "2.x";
+    if (name == "@nutui/nutui-jdl") {
+      this.currentVersion = "jdl";
     } else {
-      this.currentVersion = "3.x";
+      this.currentVersion = "2.x";
     }
   },
   methods: {
@@ -33,8 +30,8 @@ export default {
         case "2.x":
           window.location.href = " https://nutui.jd.com/";
           break;
-        case "2.3.x":
-          window.location.href = " https://nutui.jd.com/3x/";
+        case "jdl":
+          window.location.href = " https://nutui.jd.com/jdl/";
           break;
       }
     }

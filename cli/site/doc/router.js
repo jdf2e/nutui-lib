@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { version } from '@/../package.json';
+import { version,name } from '@/../package.json';
 import frontCover from './index.vue';
-import frontCover_v3 from './index-v3.vue';
-const semver = require('semver');
+import frontCover_JDL from './indexJDL.vue';
 
 const Index = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'info' */ './info.vue');
 const Intro = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'intro' */ './page/intro.vue');
@@ -27,7 +26,7 @@ const routes = [
 	{
 		path: '/index',
 		name: 'frontcover',
-		component: semver.satisfies(semver.valid(semver.coerce(version)), '<3.0.0') ? frontCover : frontCover_v3
+		component: name == '@nutui/nutui-jdl' ? frontCover_JDL:frontCover 
 	},
 	{
 		path: '/intro',
