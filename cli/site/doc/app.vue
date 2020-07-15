@@ -63,8 +63,11 @@
 			</div>
 			<div class="foot">
 				Copyright © 2018~2020
-				<a href="https://jdrd.jd.com" target="_blank">京东零售用户体验设计部</a>-
+				<a href="https://jdrd.jd.com" target="_blank">京东零售用户体验设计部</a> -
 				<a target="_blank" href="https://github.com/jdf2e">前端开发部</a>
+				<template v-if="!isNutUI">
+				 & <a href="https://github.com/jdlfe" target="_blank">京东物流技术发展部</a>
+				</template>
 			</div>
 		</div>
 	</div>
@@ -75,7 +78,7 @@ import './asset/css/style-blue.scss';
 import { packages } from '@/config.json';
 import search from './search.vue';
 import leftNav from './info.vue';
-import { version } from '@/../package.json';
+import { version,name } from '@/../package.json';
 export default {
 	name: 'app',
 	components: {
@@ -86,6 +89,7 @@ export default {
 		return {
 			packages,
 			version,
+			isNutUI:true,
 			searchList: [],
 			searchVal: '',
 			routerName: '',
@@ -113,7 +117,9 @@ export default {
 			}
 		}
 	},
-	mounted() {},
+	mounted() {
+		this.isNutUI = name=='@nutui/nutui';
+	},
 	methods: {
 		choseList(e) {
 			let searchIndex = this.searchIndex;

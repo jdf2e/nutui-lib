@@ -54,7 +54,7 @@
       <div class="content">
         <div class="mouseDiv" id="mouseDiv"></div>
         <p class="title">NutUI-JDL</p>
-        <p class="sub-title">京东物流风格轻量级移动端 Vue 组件库</p>
+        <p class="sub-title">一套基于京东物流风格的轻量级移动端 Vue 组件库</p>
         <a href="#/intro" class="blue-btn">开始使用</a>
         <a href="javascript:;" class="qrcode btn">
           扫码体验
