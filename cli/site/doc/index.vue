@@ -47,6 +47,7 @@
 							</a>
 						</li>
 					</ul>
+					<doc-ecology></doc-ecology>
 					<doc-version></doc-version>
 					<a href="https://github.com/jdf2e/nutui" title="Github" target="_blank" class="github-icon">github</a>
 				</div>
@@ -54,7 +55,7 @@
 			<div class="content">
 				<div class="mouseDiv" id="mouseDiv"></div>
 				<p class="title">NutUI</p>
-				<p class="sub-title">一套京东风格的轻量级移动端Vue组件库</p>
+				<p class="sub-title">一套京东风格的轻量级移动端 Vue 组件库</p>
 				<a href="#/intro" class="blue-btn">开始使用</a>
 				<a href="javascript:;" class="qrcode btn">
 					扫码体验
@@ -556,7 +557,7 @@ export default {
 		position: absolute;
 		top: 0;
 		right: 14%;
-		width: 376px;
+		width: 450px;
 		font-size: 12px;
 		li {
 			float: left;
@@ -576,13 +577,6 @@ export default {
 				color: #fff;
 				text-decoration: none;
 			}
-		}
-		select {
-			width: 74px;
-			height: 28px;
-			margin-top: 18px;
-			margin-left: 20px;
-			font-size: 12px;
 		}
 
 		li::before {

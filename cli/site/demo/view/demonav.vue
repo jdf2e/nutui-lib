@@ -4,15 +4,17 @@
 			<b class="go-btn"></b>
 		</div>
 		<div class="title">{{ title }}</div>
-		<a class="home" :href="'https://github.com/jdf2e/nutui/tree/master/src/packages/' + title.toLowerCase() + '/demo.vue'"></a>
+		<a class="home" :href="`https://github.com/jdf2e/nutui/tree/${branch}/src/packages/` + title.toLowerCase() + '/demo.vue'"></a>
 	</div>
 </template>
 
 <script>
+import { name } from '@/../package.json';
 export default {
 	data() {
 		return {
 			showPath: '',
+			branch:'v2',
 		};
 	},
 	methods: {
@@ -49,7 +51,9 @@ export default {
 			},
 		},
 	},
-	mounted() {},
+	mounted() {
+		this.branch = name=="@nutui/nutui"?'v2':'nutui-jdl'
+	},
 };
 </script>
 

@@ -22,7 +22,9 @@ Vue.prototype.qrcode = codes;
 
 Vue.config.productionTip = false;
 import Version from './compents/version/version.vue';
+import Ecology from './compents/ecology/ecology.vue';
 Vue.component(Version.name, Version);
+Vue.component(Ecology.name, Ecology);
 new Vue({
 	el: '#doc',
 	router,

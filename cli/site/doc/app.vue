@@ -32,6 +32,9 @@
 							</a>
 						</li>
 						<li>
+							<doc-ecology></doc-ecology>
+						</li>
+						<li>
 							<doc-version></doc-version>
 						</li>
 						<li class="github">
@@ -60,8 +63,8 @@
 			</div>
 			<div class="foot">
 				Copyright © 2018~2020
-				<a href="//jdc.jd.com" target="_blank">JDC</a>-
-				<a target="_blank" href="javascript:;">前端开发部</a>
+				<a href="https://jdrd.jd.com" target="_blank">京东零售用户体验设计部</a>-
+				<a target="_blank" href="https://github.com/jdf2e">前端开发部</a>
 			</div>
 		</div>
 	</div>
@@ -264,8 +267,8 @@ export default {
 		select {
 			width: 74px;
 			height: 28px;
-			margin-top: 18px;
-			margin-left: 20px;
+			// margin-top: 18px;
+			// margin-left: 20px;
 			font-size: 12px;
 		}
 		.search-box {

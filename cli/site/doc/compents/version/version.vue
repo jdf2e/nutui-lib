@@ -1,8 +1,6 @@
 <template>
-  <select @change="openwindow" v-model="currentVersion">
-    <option value="jdl">jdl</option>
-    <option value="2.x">2.x</option>
-    <option value="1">1.x</option>
+  <select class="nutui-select" @change="openwindow" v-model="currentVersion">
+    <option :key="item" v-for="item in versions">{{item}}</option>
   </select>
 </template>
 <script>
@@ -11,20 +9,23 @@ export default {
   name: "doc-version",
   data() {
     return {
-      currentVersion: ""
+      currentVersion: "",
+      versions: []
     };
   },
   mounted() {
-    if (name == "@nutui/nutui-jdl") {
-      this.currentVersion = "jdl";
-    } else {
+    if (name == "@nutui/nutui") {
+      this.versions = ["1.x", "2.x"];
       this.currentVersion = "2.x";
+    } else {
+      this.versions = ["1.x"];
+      this.currentVersion = "1.x";
     }
   },
   methods: {
     openwindow(val) {
       switch (val.target.value.toString()) {
-        case "1":
+        case "1.x":
           window.location.href = "https://nutui.jd.com/1x/";
           break;
         case "2.x":

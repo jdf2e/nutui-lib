@@ -3,8 +3,9 @@
 		<a href="https://github.com/jdf2e/nutui/" target="_blank" class="github-btn">Github</a>
 
 		<h1 class="logo"></h1>
-		<div class="version">NutUI {{ version }}</div>
-		<p>一套京东风格的移动端Vue组件库</p>
+		<div class="version">{{isNutUI?'NutUI':'NutUI-JDL'}} {{ version }}</div>
+		<p v-if="isNutUI">一套京东风格的移动端Vue组件库</p>
+		<p v-else>京东风格的移动端Vue组件库</p>
 		<div :class="['demo-list-box', { unfold: foldStatus[item] }]" v-for="item in sorts" :key="item">
 			<h4 @click="toggleFold(item)">
 				{{ oriSorts[item] }}
@@ -22,12 +23,13 @@
 				</template>
 			</ul>
 		</div>
-		<div id="demo-footer">京东用户体验设计部（JDC） · 前端开发部 · v{{ version }}</div>
+		<div id="demo-footer" v-if="isNutUI">京东零售用户体验设计部 · 前端开发部 · v{{ version }}</div>
+		<div id="demo-footer" v-else>JDC 前端开发部 & JDL 用户产品部 · v{{ version }}</div>
 	</div>
 </template>
 
 <script>
-import { version } from '@/../package.json';
+import { version,name } from '@/../package.json';
 import { packages, sorts } from '@/config.json';
 export default {
 	name: 'index',
@@ -36,6 +38,7 @@ export default {
 			path: '',
 			packages: {},
 			version,
+			isNutUI:true,
 			sortedPackages: [],
 			oriSorts: [],
 			sorts: [1, 2, 0, 3, 4, 5, 6],
@@ -61,6 +64,7 @@ export default {
 	created() {
 		this.packages = packages;
 		this.oriSorts = sorts;
+		this.isNutUI = name=="@nutui/nutui";
 
 		this.foldStatus = Array(this.sorts.length)
 			.join(',')

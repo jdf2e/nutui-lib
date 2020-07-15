@@ -46,20 +46,21 @@
               </a>
             </li>
           </ul>
-          <doc-version class="v3-select"></doc-version>
+          <doc-ecology></doc-ecology>
+					<doc-version></doc-version>
           <a href="https://github.com/jdf2e/nutui" title="Github" target="_blank" class="github-icon">github</a>
         </div>
       </div>
       <div class="content">
         <div class="mouseDiv" id="mouseDiv"></div>
-        <p class="title">NutUI JDL</p>
-        <p class="sub-title">一套京东风格的轻量级移动端Vue组件库</p>
+        <p class="title">NutUI-JDL</p>
+        <p class="sub-title">京东物流风格轻量级移动端 Vue 组件库</p>
         <a href="#/intro" class="blue-btn">开始使用</a>
         <a href="javascript:;" class="qrcode btn">
           扫码体验
           <a>
             <span>请使用手机扫码体验</span>
-            <img src="https://img14.360buyimg.com/uba/jfs/t1/32118/11/559/2782/5c3d81ecEbda0c0f1/5f2b637d11817204.png"
+            <img src="https://img12.360buyimg.com/imagetools/jfs/t1/124892/31/7144/6065/5f0d9fe4Ef020d678/cae78d015aa5897c.png"
               alt />
           </a>
         </a>
@@ -126,7 +127,7 @@ export default {
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-  }  
+  }
 }
 
 @keyframes leftToRight {
@@ -135,7 +136,7 @@ export default {
   }
   to {
     transform: translate3d(0, 0, 0);
-  }  
+  }
 }
 
 @keyframes upToBottom {
@@ -144,7 +145,7 @@ export default {
   }
   to {
     transform: translate3d(0, 0, 0);
-  }  
+  }
 }
 
 @keyframes incline {
@@ -153,7 +154,7 @@ export default {
   }
   to {
     transform: translate3d(0, 0, 0);
-  }  
+  }
 }
 
 @keyframes rotateSelf {
@@ -162,11 +163,8 @@ export default {
   }
   to {
     transform: rotate(360deg);
-  }  
+  }
 }
-
-
-
 
 .container {
   position: relative;
@@ -304,7 +302,7 @@ export default {
     position: absolute;
     top: 0;
     right: 14%;
-    width: 376px;
+    width: 450px;
     font-size: 14px;
     li {
       float: left;
@@ -313,7 +311,7 @@ export default {
       height: 64px;
       line-height: 64px;
       cursor: pointer;
-      color: rgba(51,51,51,1);;
+      color: rgba(51, 51, 51, 1);
       position: relative;
       & > a {
         display: block;
@@ -321,17 +319,11 @@ export default {
         line-height: 64px;
       }
       a {
-        color: rgba(51,51,51,1);;
+        color: rgba(51, 51, 51, 1);
         text-decoration: none;
       }
     }
-    select {
-      width: 74px;
-      height: 28px;
-      margin-top: 18px;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+   
 
     li::before {
       content: "";
@@ -353,9 +345,6 @@ export default {
     }
     li:hover ~ li::before {
       left: 0;
-    }
-    .v3-select {
-      border: 1px solid rgba(229,229,229,1);
     }
     .github-icon {
       display: inline-block;
@@ -438,13 +427,13 @@ export default {
       margin-top: -50px;
     }
     .title {
-      font-size: 54px;
+      font-size: 42px;
       color: #333;
       font-weight: bold;
       animation: fadeInLeft 1s both;
     }
     .sub-title {
-      font-size: 22px;
+      font-size: 24px;
       color: #333;
       padding-top: 13px;
       padding-bottom: 26px;
@@ -452,32 +441,40 @@ export default {
     }
     .btn,
     .blue-btn {
-      border: 1px solid rgba(9,69,255,1);
+      border: 1px solid rgba(9, 69, 255, 1);
       background: #fff;
-      color: rgba(9,69,255,1);;
+      color: rgba(9, 69, 255, 1);
       width: 150px;
-      height: 50px;
-      line-height: 50px;
+      height: 40px;
+      line-height: 40px;
       text-align: center;
       display: inline-block;
-      font-size: 18px;
+      font-size: 14px;
       text-decoration: none;
       border-radius: 25px;
       animation: fadeInLeft 1s both 1.2s;
       &:hover,
       &:active {
-        border-color: rgba(9,69,255,0.8);
-        color: rgba(9,69,255,0.8);
+        border-color: rgba(9, 69, 255, 0.8);
+        color: rgba(9, 69, 255, 0.8);
       }
     }
     .blue-btn {
-      border:none;
+      border: none;
       color: #fff;
-      background: linear-gradient(130deg, rgba(36,116,255,1) 0%,rgba(4,47,255,1) 100%);;
+      background: linear-gradient(
+        130deg,
+        rgba(36, 116, 255, 1) 0%,
+        rgba(4, 47, 255, 1) 100%
+      );
       margin-right: 26px;
       &:hover,
       &:active {
-        background: linear-gradient(130deg, rgba(36,116,255,0.8) 0%,rgba(4,47,255,0.8) 100%);;
+        background: linear-gradient(
+          130deg,
+          rgba(36, 116, 255, 0.8) 0%,
+          rgba(4, 47, 255, 0.8) 100%
+        );
         color: rgba(255, 255, 255, 0.8);
       }
     }
