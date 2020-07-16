@@ -56,14 +56,18 @@
 				<div class="mouseDiv" id="mouseDiv"></div>
 				<p class="title">NutUI</p>
 				<p class="sub-title">一套京东风格的轻量级移动端 Vue 组件库</p>
-				<a href="#/intro" class="blue-btn">开始使用</a>
-				<a href="javascript:;" class="qrcode btn">
-					扫码体验
-					<a>
-						<span>请使用手机扫码体验</span>
-						<img src="https://img14.360buyimg.com/uba/jfs/t1/32118/11/559/2782/5c3d81ecEbda0c0f1/5f2b637d11817204.png" alt />
+				<div style="display: flex;align-items: center;">
+					<a href="#/intro" class="blue-btn">开始使用</a>
+					<a href="javascript:;" class="qrcode btn">
+						扫码体验
+						<a>
+							<span>请使用手机扫码体验</span>
+							<img src="https://img14.360buyimg.com/uba/jfs/t1/32118/11/559/2782/5c3d81ecEbda0c0f1/5f2b637d11817204.png" alt />
+						</a>
 					</a>
-				</a>
+					 <iframe style="margin-left:20px" src="https://ghbtns.com/github-btn.html?user=jdf2e&repo=nutui&type=star&count=true&size=large"
+            frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -717,6 +721,9 @@ export default {
 				background: rgba(83, 150, 255, 0.8);
 				color: rgba(255, 255, 255, 0.8);
 			}
+		}
+		iframe{
+			animation: fadeInLeft 1s both 1.2s;
 		}
 	}
 	.qrcode {

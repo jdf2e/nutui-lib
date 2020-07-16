@@ -15,7 +15,7 @@
 					<search />
 
 					<ul class="list">
-						<li class="joinus">
+						<li class="joinus" v-if="isNutUI">
 							<a href="#/joinus"></a>
 							<img src="./asset/img/jion_us.gif" alt="" />
 						</li>

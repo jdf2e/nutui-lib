@@ -47,7 +47,7 @@
             </li>
           </ul>
           <doc-ecology></doc-ecology>
-					<doc-version></doc-version>
+          <doc-version></doc-version>
           <a href="https://github.com/jdf2e/nutui" title="Github" target="_blank" class="github-icon">github</a>
         </div>
       </div>
@@ -55,15 +55,20 @@
         <div class="mouseDiv" id="mouseDiv"></div>
         <p class="title">NutUI-JDL</p>
         <p class="sub-title">一套基于京东物流风格的轻量级移动端 Vue 组件库</p>
-        <a href="#/intro" class="blue-btn">开始使用</a>
-        <a href="javascript:;" class="qrcode btn">
-          扫码体验
-          <a>
-            <span>请使用手机扫码体验</span>
-            <img src="https://img12.360buyimg.com/imagetools/jfs/t1/124892/31/7144/6065/5f0d9fe4Ef020d678/cae78d015aa5897c.png"
-              alt />
+        <div style="display: flex;align-items: center;">
+          <a href="#/intro" class="blue-btn">开始使用</a>
+          <a href="javascript:;" class="qrcode btn">
+            扫码体验
+            <a>
+              <span>请使用手机扫码体验</span>
+              <img
+                src="https://img12.360buyimg.com/imagetools/jfs/t1/124892/31/7144/6065/5f0d9fe4Ef020d678/cae78d015aa5897c.png"
+                alt />
+            </a>
           </a>
-        </a>
+          <iframe style="margin-left:20px" src="https://ghbtns.com/github-btn.html?user=jdf2e&repo=nutui&type=star&count=true&size=large"
+            frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -323,7 +328,6 @@ export default {
         text-decoration: none;
       }
     }
-   
 
     li::before {
       content: "";
@@ -478,6 +482,9 @@ export default {
         color: rgba(255, 255, 255, 0.8);
       }
     }
+    iframe{
+			animation: fadeInLeft 1s both 1.2s;
+		}
   }
   .qrcode {
     background: none;

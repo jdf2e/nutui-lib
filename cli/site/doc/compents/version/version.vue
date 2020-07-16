@@ -1,5 +1,5 @@
 <template>
-  <select class="nutui-select" @change="openwindow" v-model="currentVersion">
+  <select v-if="versions.length>1" class="nutui-select" @change="openwindow" v-model="currentVersion">
     <option :key="item" v-for="item in versions">{{item}}</option>
   </select>
 </template>
