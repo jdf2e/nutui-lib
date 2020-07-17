@@ -1,5 +1,5 @@
 <template>
-  <select v-if="versions.length>1" class="nutui-select" @change="openwindow" v-model="currentVersion">
+  <select v-if="isNutUI" class="nutui-select" @change="openwindow" v-model="currentVersion">
     <option :key="item" v-for="item in versions">{{item}}</option>
   </select>
 </template>
@@ -10,14 +10,17 @@ export default {
   data() {
     return {
       currentVersion: "",
-      versions: []
+      versions: [],
+      isNutUI:true
     };
   },
   mounted() {
     if (name == "@nutui/nutui") {
+      this.isNutUI=true;
       this.versions = ["1.x", "2.x"];
       this.currentVersion = "2.x";
     } else {
+      this.isNutUI=false;
       this.versions = ["1.x"];
       this.currentVersion = "1.x";
     }

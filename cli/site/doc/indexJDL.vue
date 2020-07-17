@@ -54,7 +54,7 @@
       <div class="content">
         <div class="mouseDiv" id="mouseDiv"></div>
         <p class="title">NutUI-JDL</p>
-        <p class="sub-title">一套基于京东物流风格的轻量级移动端 Vue 组件库</p>
+        <p class="sub-title">京东物流风格的轻量级移动端Vue组件库</p>
         <div style="display: flex;align-items: center;">
           <a href="#/intro" class="blue-btn">开始使用</a>
           <a href="javascript:;" class="qrcode btn">
@@ -307,8 +307,10 @@ export default {
     position: absolute;
     top: 0;
     right: 14%;
-    width: 450px;
+    width: 370px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
     li {
       float: left;
       width: 70px;
@@ -381,7 +383,7 @@ export default {
       background: url(./asset/img/nutui-jdl.png) 0 0 no-repeat;
       background-size: contain;
       height: 46px;
-      width: 120px;
+      width: 180px;
       display: inline-block;
       position: absolute;
       top: 50%;

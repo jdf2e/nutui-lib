@@ -5,7 +5,7 @@
 		<h1 class="logo"></h1>
 		<div class="version">{{isNutUI?'NutUI':'NutUI-JDL'}} {{ version }}</div>
 		<p v-if="isNutUI">一套京东风格的移动端Vue组件库</p>
-		<p v-else>京东风格的移动端Vue组件库</p>
+		<p v-else>京东物流风格的移动端Vue组件库</p>
 		<div :class="['demo-list-box', { unfold: foldStatus[item] }]" v-for="item in sorts" :key="item">
 			<h4 @click="toggleFold(item)">
 				{{ oriSorts[item] }}
@@ -24,7 +24,7 @@
 			</ul>
 		</div>
 		<div id="demo-footer" v-if="isNutUI">京东零售用户体验设计部 · 前端开发部 · v{{ version }}</div>
-		<div id="demo-footer" v-else>JDC 前端开发部 & JDL 用户产品部 · v{{ version }}</div>
+		<div id="demo-footer" v-else>JDR 前端开发部 & JDL 用户产品部 · v{{ version }}</div>
 	</div>
 </template>
 

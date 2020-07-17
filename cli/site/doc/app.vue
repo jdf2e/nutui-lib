@@ -8,7 +8,7 @@
 				<div class="logo">
 					<a href="#/index" class="logo-link">
 						<img v-if="isNutUI" src="./asset/img/nut.png" alt />
-						<img v-else src="./asset/img/nut.png" alt />
+						<img v-else src="./asset/img/nutui-jdl.png" alt />
 					</a>
 					<span class="version">v{{ version }}</span>
 				</div>
@@ -248,7 +248,7 @@ export default {
 		}
 		img {
 			display: block;
-			width: 120px;
+			// width: 120px;
 			height: 46px;
 			flex-grow: 0;
 			flex-shrink: 0;

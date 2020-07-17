@@ -1,5 +1,5 @@
 <template>
-  <select class="nutui-select" @change="changeEcology" v-model="currentEcology">
+  <select v-if="isNutUI" class="nutui-select" @change="changeEcology" v-model="currentEcology">
     <option value="nutui">nutui</option>
     <option value="nutui-jdl">nutui-jdl</option>
   </select>
@@ -11,13 +11,16 @@ export default {
   data() {
     return {
       currentEcology: "",
+      isNutUI:true
     };
   },
   mounted() {
     if (name == "@nutui/nutui") {
       this.currentEcology = "nutui";
+      this.isNutUI=true;
     } else {
       this.currentEcology = "nutui-jdl";
+      this.isNutUI=false;
     }
   },
   methods: {
