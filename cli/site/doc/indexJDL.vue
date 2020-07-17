@@ -378,7 +378,7 @@ export default {
     font-size: 0;
     position: relative;
     s {
-      background: url(./asset/img/nut.png) 0 0 no-repeat;
+      background: url(./asset/img/nutui-jdl.png) 0 0 no-repeat;
       background-size: contain;
       height: 46px;
       width: 120px;

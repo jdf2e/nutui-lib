@@ -7,7 +7,8 @@
 			<div class="hder">
 				<div class="logo">
 					<a href="#/index" class="logo-link">
-						<img src="./asset/img/nut.png" alt />
+						<img v-if="isNutUI" src="./asset/img/nut.png" alt />
+						<img v-else src="./asset/img/nut.png" alt />
 					</a>
 					<span class="version">v{{ version }}</span>
 				</div>
