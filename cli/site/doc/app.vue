@@ -28,7 +28,8 @@
 								示例
 								<a :href="routerName">
 									<span>请使用手机扫码体验</span>
-									<img src="https://img14.360buyimg.com/uba/jfs/t1/32118/11/559/2782/5c3d81ecEbda0c0f1/5f2b637d11817204.png" alt />
+									<img v-if="isNutUI" src="https://img14.360buyimg.com/uba/jfs/t1/32118/11/559/2782/5c3d81ecEbda0c0f1/5f2b637d11817204.png" alt />
+									<img v-else src="https://img12.360buyimg.com/imagetools/jfs/t1/124892/31/7144/6065/5f0d9fe4Ef020d678/cae78d015aa5897c.png" alt />
 								</a>
 							</a>
 						</li>

@@ -56,7 +56,7 @@ const myMixin ={
             return res.previousElementSibling
             }
         });    
-        let demourl = 'https://nutui.jd.com/demo.html#'+this.$route.path;
+        let demourl = location.origin + location.pathname + 'demo.html#' + this.$route.path;
         this.demourl = demourl;
         this.qrcode.toDataURL(demourl,{width:170},(err,url)=>{
             this.codeurl = url

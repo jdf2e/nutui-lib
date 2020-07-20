@@ -8,6 +8,7 @@ const Index = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'inf
 const Intro = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'intro' */ './page/intro.vue');
 const Start = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'start' */ './page/start.vue');
 const International = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'international' */ './page/international.vue');
+const Design = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'design' */ './page/design.vue');
 const Theme = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'theme' */ './page/theme.vue');
 const JoinUs = () => import(/* webpackPrefetch: true */ /* webpackChunkName: 'joinus' */ './page/joinus.vue');
 //const Update = () => import('./page/changelog.vue');
@@ -42,6 +43,14 @@ const routes = [
 		components: {
 			default: Index,
 			main: International
+		}
+	},
+	{
+		path: '/design',
+		name: 'design',
+		components: {
+			default: Index,
+			main: Design
 		}
 	},
 	{
