@@ -23,6 +23,9 @@
 						<li class="cur">
 							<a href="#/intro">指南</a>
 						</li>
+						<li v-if="!isNutUI">
+							<a class="qrcode demoLink" href="#/design">设计资源</a>
+						</li>
 						<li>
 							<a class="qrcode demoLink" href="/demo.html#/index" target="_blank">
 								示例
@@ -196,6 +199,21 @@ export default {
 };
 </script>
 <style lang="scss">
+
+.article{
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 !important;
+	li{
+    	flex-direction: column;
+		justify-content: center;
+		&::before{
+			display:none !important;
+		}
+		box-shadow: 0px 0px 20px 0px rgba(236,237,239,1);
+	}
+}
 .fixed-box {
 	position: fixed;
 	z-index: 9;

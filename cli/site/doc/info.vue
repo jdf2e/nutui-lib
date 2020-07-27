@@ -15,9 +15,6 @@
 				<dd :class="curName == 'international' ? 'l-1 curs' : 'l-1'">
 					<a href="#/international">国际化</a>
 				</dd>
-				<!-- <dd :class="curName == 'design' ? 'l-1 curs' : 'l-1'">
-					<a href="#/design">设计资源</a>
-				</dd> -->
 				<dd :class="curName == 'update' ? 'l-1 curs' : 'l-1'">
 					<a href="https://github.com/jdf2e/nutui/releases" target="_blank">更新日志</a>
 				</dd>
