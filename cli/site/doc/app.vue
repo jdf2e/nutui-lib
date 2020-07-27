@@ -20,11 +20,11 @@
 							<a href="#/joinus"></a>
 							<img src="./asset/img/jion_us.gif" alt="" />
 						</li>
-						<li class="cur">
+						<li :class="{cur:$route.name!='design'}">
 							<a href="#/intro">指南</a>
 						</li>
-						<li v-if="!isNutUI">
-							<a class="qrcode demoLink" href="#/design">设计资源</a>
+						<li v-if="!isNutUI" :class="{cur:$route.name=='design'}">
+							<a class="qrcode demoLink" href="#/design">资源</a>
 						</li>
 						<li>
 							<a class="qrcode demoLink" href="/demo.html#/index" target="_blank">

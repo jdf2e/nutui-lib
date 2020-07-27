@@ -7,7 +7,7 @@ import address from 'address';
 function devServer(config: Webpack.Configuration) {
 	const compiler = Webpack(config);
 	const devServerOptions = {
-		open: false,
+		open: true,
 		host: '0.0.0.0',
 		port: 8080,
 		stats: 'errors-only',
