@@ -3,7 +3,7 @@
 		<a href="https://github.com/jdf2e/nutui/" target="_blank" class="github-btn">Github</a>
 
 		<h1 class="logo"></h1>
-		<div class="version">{{isNutUI?'NutUI':'NutUI-JDL'}} {{ version }}</div>
+		<div class="version">{{isNutUI?'NutUI':'NutUI-JDL'}}</div>
 		<p v-if="isNutUI">一套京东风格的移动端Vue组件库</p>
 		<p v-else>京东物流风格的移动端Vue组件库</p>
 		<div :class="['demo-list-box', { unfold: foldStatus[item] }]" v-for="item in sorts" :key="item">

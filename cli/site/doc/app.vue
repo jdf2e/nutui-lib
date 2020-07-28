@@ -20,8 +20,11 @@
 							<a href="#/joinus"></a>
 							<img src="./asset/img/jion_us.gif" alt="" />
 						</li>
-						<li class="cur">
+						<li class="cur-w" :class="{cur:$route.name!='design'}">
 							<a href="#/intro">指南</a>
+						</li>
+						<li v-if="!isNutUI" class="cur-w" :class="{cur:$route.name=='design'}">
+							<a href="#/design">资源</a>
 						</li>
 						<li>
 							<a class="qrcode demoLink" href="/demo.html#/index" target="_blank">
@@ -196,6 +199,21 @@ export default {
 };
 </script>
 <style lang="scss">
+
+.article{
+    display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 !important;
+	li{
+    	flex-direction: column;
+		justify-content: center;
+		&::before{
+			display:none !important;
+		}
+		box-shadow: 0px 0px 20px 0px rgba(236,237,239,1);
+	}
+}
 .fixed-box {
 	position: fixed;
 	z-index: 9;
@@ -348,8 +366,12 @@ export default {
 			line-height: 63px;
 			text-align: center;
 		}
+		.cur-w{
+			padding: 0 20px;
+		}
 		.cur {
 			border-bottom: 2px solid #5396ff;
+			
 			a {
 				color: #5396ff;
 			}
