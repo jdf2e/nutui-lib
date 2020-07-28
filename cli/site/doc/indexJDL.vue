@@ -35,6 +35,9 @@
               <a href="#/ActionSheet">组件</a>
             </li>
             <li>
+              <a href="#/design">资源</a>
+            </li>
+            <li>
               <a href="/demo.html#/index" class="qrcode top-qr" target="_blank">
                 示例
                 <a>
