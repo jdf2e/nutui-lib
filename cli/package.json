@@ -15,7 +15,8 @@
     "url": "https://github.com/jdf2e/nutui-lib/tree/master/cli"
   },
   "bin": {
-    "nutui-cli": "./dist_cli/bin/index.js"
+    "nutui-cli": "./dist_cli/bin/index.js",
+    "nut": "./dist_cli/bin/nut.js"
   },
   "scripts": {
     "dev": "tsc --watch --incremental"
@@ -47,12 +48,14 @@
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "css-loader": "^3.4.1",
+    "download-git-repo": "^3.0.2",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
     "expect": "23.6.0",
     "file-loader": "^5.0.2",
     "fs": "0.0.1-security",
     "fs-extra": "^8.1.0",
+    "handlebars": "^4.7.6",
     "highlight.js": "^9.17.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.0",
@@ -60,12 +63,15 @@
     "istanbul-instrumenter-loader": "3.0.1",
     "jsdom": "13.0.0",
     "jsdom-global": "3.0.2",
+    "latest-version": "^5.1.0",
+    "metalsmith": "^2.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "mocha": "5.2.0",
     "mocha-webpack": "2.0.0-beta.0",
     "node-sass": "^4.13.0",
     "nyc": "10.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "ora": "^4.0.5",
     "path": "^0.12.7",
     "portfinder": "^1.0.26",
     "postcss-import": "^12.0.1",

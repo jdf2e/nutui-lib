@@ -12,7 +12,7 @@ import { clean } from '../commands/clean';
 import { createComponent } from '../commands/createComponent';
 import { commitLint } from '../commands/commitLint';
 import { test } from '../commands/test';
-import { release } from '../commands/npmPublish';
+import { release } from '../commands/npmPublish'; 
 const config_cli = require(ROOT_CLI_PATH('package.json'));
 
 program.version(`@nutui/cli ${config_cli.version}`, '-v', '--version');
@@ -32,5 +32,7 @@ program.command('commit-lint').description('获取校验commit message 的配置
 program.command('test').description('运行单元测试').action(test);
 
 program.command('release').description('发布版本...待开发').action(release);
+
+program.command('init').description('发布版本...待开发').action(release); 
 
 program.parse(process.argv);
