@@ -10,7 +10,7 @@
 						<img v-if="isNutUI" src="./asset/img/nut.png" alt />
 						<img v-else src="./asset/img/nutui-jdl.png" alt />
 					</a>
-					<span class="version">v{{ version }}</span>
+					<span v-if="isNutUI" class="version">v{{ version }}</span>
 				</div>
 				<div class="h-nav">
 					<search />
