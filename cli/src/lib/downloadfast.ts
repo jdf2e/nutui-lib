@@ -1,6 +1,6 @@
 
 
-const down = require('./download');
+import down from  './download';
 //  模版修改方法
 const Metalsmith = require('metalsmith')
 const Handlebars = require('handlebars')
@@ -39,6 +39,7 @@ let generator = function(metadata = {}, source, destination = '.') {
 
 
 export default  async function(option){    
+    console.log(123123123)
     let target = await new Promise((resolve,reject)=>{
         resolve(down(option.target,'fast'))
     })          

@@ -1,6 +1,8 @@
 import { compileSite } from "../compiler/site";
 import downloadFast from'../lib/downloadfast' ;
 import download from '../lib/download' ;
+import {removeDir} from '../util/index' ;
+import { compilePackageDisperse } from "../compiler/package.disperse";
 const path = require('path');
 const glob = require('glob');
 const inquirer = require('inquirer');
@@ -58,10 +60,14 @@ async function go(){
                     const fileName = path.resolve(process.cwd(),path.join('.',name));
                     const isDir = fs.statSync(fileName).isDirectory();
                     return  name.indexOf(projectName) != -1 && isDir
-                }).length !== 0){
-                    console.error(logSymbols.error,chalk.red(`项目${projectName}已经存在`));
-                }else{
-                     resolve(projectName);
+                }).length !== 0){ 
+                    const cwd = process.cwd() 
+                    const targetDir = path.resolve(cwd, projectName || '.')
+                    console.log(targetDir)
+                    removeDir(targetDir);
+                    resolve(projectName); 
+                }else{ 
+                    resolve(projectName);
                 }
             }else{
                 resolve(projectName);
@@ -120,7 +126,7 @@ async function go(){
             target:projectRoot
         })    
         await new Promise((resolve,reject)=>{ 
-            resolve(downloadFast(options))
+            resolve(download(options))
         })    
         return 'fast';
     }    
@@ -185,7 +191,7 @@ async function go(){
                 // }
             ]
         }]))
-    });
+    }); 
     answer  = Object.assign(answer,anser3)  
     const version = await Promise.all([latestVersion('@nutui/carefree'),
         latestVersion('smock-webpack-plugin'),
@@ -209,7 +215,8 @@ async function go(){
         for(let b of answer.features){
             answer[b] = true;
         }
-        return resolve(download(projectRoot));
+        console.log(123123123)
+        // return resolve(download(projectRoot));
     })
     const context = {
         name:projectName,
