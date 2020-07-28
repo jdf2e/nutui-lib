@@ -1,11 +1,11 @@
 import { compileSite } from "../compiler/site";
-
+import downloadFast from'../lib/downloadfast' ;
+import download from '../lib/download' ;
 const path = require('path');
 const glob = require('glob');
 const inquirer = require('inquirer');
 const fs = require('fs');
-const downloadFast = require('../lib/downloadfast');
-const download = require('../lib/download');
+
 const generator = require('../lib/generator');
 const logSymbols = require('log-symbols');
 const chalk = require('chalk');
@@ -13,10 +13,28 @@ const latestVersion = require('latest-version');
 let projectName:String ;
 
 export function create(env:Object,options:Array<String>) { 
-    projectName = options[0];
-    console.log(0)
+    projectName = options[0]; 
 	go().then((res)=>{   
-		 
+        console.log('')
+        console.log(logSymbols.success,chalk.green('创建成功:)'));
+        console.log(logSymbols.info,`cd ${projectName}`);
+        console.log(logSymbols.info,`安装npm install`);
+        if(res === 'fast'){        
+            console.log(logSymbols.info,'开发 npm run dev');
+            console.log(logSymbols.info,'编译 npm run build');
+            console.log(logSymbols.info,'编译到本地路径 npm run build:local');
+            console.log(logSymbols.info,'上传 npm run upload');              
+            console.log(logSymbols.info,'代码检查和格式化 npm run lint');
+            console.log(logSymbols.info,'图片压缩和webp转换 npm run compress');  
+        }else{       
+            console.log(logSymbols.info,'先编译第三方依赖库 npm run dll');
+            console.log(logSymbols.info,'开发 npm run dev');
+            console.log(logSymbols.info,'编译 npm run build');
+            console.log(logSymbols.info,'上传 npm run upload');
+            console.log(logSymbols.info,'真机调试 npm run carefree');
+            console.log(logSymbols.info,'代码检查和格式化 npm run lint');
+            console.log(logSymbols.info,'图片压缩和webp转换 npm run compress');       
+        }
 	}).catch((err)=>{ 
 	});
 }
@@ -101,8 +119,7 @@ async function go(){
         let options = Object.assign(answer,{
             target:projectRoot
         })    
-        await new Promise((resolve,reject)=>{
-			console.log(options);
+        await new Promise((resolve,reject)=>{ 
             resolve(downloadFast(options))
         })    
         return 'fast';

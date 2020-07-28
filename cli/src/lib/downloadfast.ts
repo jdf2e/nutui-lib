@@ -38,7 +38,7 @@ let generator = function(metadata = {}, source, destination = '.') {
 }
 
 
-module.exports = async function(option){    
+export default  async function(option){    
     let target = await new Promise((resolve,reject)=>{
         resolve(down(option.target,'fast'))
     })          

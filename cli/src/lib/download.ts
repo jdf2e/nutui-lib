@@ -2,7 +2,7 @@ const download  = require('download-git-repo');
 const ora       = require('ora');
 const path     = require('path');
 // 选择下载源
-module.exports = function(target:String,isfast:String){
+export default function(target:String,isfast:String){
     target = path.join(target || '.','.download-temp')
     return new Promise (function(resolve,reject){
         let url = ''
