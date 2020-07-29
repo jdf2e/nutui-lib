@@ -16,7 +16,8 @@
   },
   "bin": {
     "nutui-cli": "./dist_cli/bin/index.js",
-    "nut": "./dist_cli/bin/nut.js"
+    "nut": "./dist_cli/bin/nut.js",
+    "nut-cli-service":"./dist_cli/bin/nut-cli-service.js"
   },
   "scripts": {
     "dev": "tsc --watch --incremental"
@@ -49,17 +50,20 @@
     "cross-env": "^5.2.0",
     "css-loader": "^3.4.1",
     "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.3",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.1.2",
     "expect": "23.6.0",
     "file-loader": "^5.0.2",
     "fs": "0.0.1-security",
     "fs-extra": "^8.1.0",
+    "globby": "^11.0.1",
     "handlebars": "^4.7.6",
     "highlight.js": "^9.17.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.0",
     "inquirer": "^7.0.3",
+    "isbinaryfile": "^4.0.6",
     "istanbul-instrumenter-loader": "3.0.1",
     "jsdom": "13.0.0",
     "jsdom-global": "3.0.2",
@@ -97,7 +101,8 @@
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2",
     "webpack-node-externals": "1.7.2",
-    "webpackbar": "^4.0.0"
+    "webpackbar": "^4.0.0",
+    "yaml-front-matter": "^4.1.0"
   },
   "devDependencies": {
     "@types/copy-webpack-plugin": "^5.0.0",

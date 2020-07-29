@@ -1,4 +1,4 @@
-<%_ if (!rootOptions.bare) { _%>
+ 
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -9,9 +9,9 @@
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
-      <%_ for (plugin of plugins) { _%>
-      <li><a href="<%- plugin.link %>" target="_blank" rel="noopener"><%- plugin.name %></a></li>
-      <%_ } _%>
+ 
+      <li><a href="<%- plugin.link %>" target="_blank" rel="noopener"> </a></li>
+    
     </ul>
     <h3>Essential Links</h3>
     <ul>
@@ -40,18 +40,8 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<%_ if (rootOptions.cssPreprocessor !== 'stylus') { _%>
-<style scoped<%-
-  rootOptions.cssPreprocessor
-    ? ` lang="${
-        rootOptions.cssPreprocessor.includes('sass')
-          ? 'scss'
-          : rootOptions.cssPreprocessor
-      }"`
-    : ``
-%>>
+ 
+<style scoped >
 h3 {
   margin: 40px 0 0;
 }
@@ -66,22 +56,5 @@ li {
 a {
   color: #42b983;
 }
-</style>
-<%_ } else { _%>
-<style scoped lang="stylus">
-h3
-  margin 40px 0 0
-
-ul
-  list-style-type none
-  padding 0
-
-li
-  display inline-block
-  margin 0 10px
-
-a
-  color #42b983
-</style>
-<%_ } _%>
-<%_ } _%>
+</style> 
+ 
