@@ -23,7 +23,7 @@
 						<li class="cur-w" :class="{cur:$route.name!='design'}">
 							<a href="#/intro">指南</a>
 						</li>
-						<li v-if="!isNutUI" class="cur-w" :class="{cur:$route.name=='design'}">
+						<li class="cur-w" :class="{cur:$route.name=='design'}">
 							<a href="#/design">资源</a>
 						</li>
 						<li>

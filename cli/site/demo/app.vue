@@ -40,7 +40,7 @@ body {
 	min-height: 100vh;
 	padding-top: 40px;
 	box-sizing: border-box;
-	background: #f6f6f6;
+	background: #f7f7f7;
 	&.in-iframe {
 		padding-top: 0;
 	}

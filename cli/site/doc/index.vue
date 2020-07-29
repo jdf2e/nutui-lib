@@ -560,7 +560,7 @@ export default {
 	.menu {
 		position: absolute;
 		top: 0;
-		right: 14%;
+		right: 100px;
 		width: 450px;
 		font-size: 12px;
 		li {

@@ -309,7 +309,7 @@ export default {
   .menu {
     position: absolute;
     top: 0;
-    right: 14%;
+    right: 100px;
     width: 370px;
     font-size: 14px;
     display: flex;
