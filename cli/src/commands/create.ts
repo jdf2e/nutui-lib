@@ -1,25 +1,20 @@
- 
 import path = require("path");
 import glob = require("glob");
 import inquirer = require("inquirer");
 import fs = require("fs-extra");
 const generator = require("../compiler/generator");
-import logSymbols = require("log-symbols"); 
+import logSymbols = require("log-symbols");
 const latestVersion = require("latest-version");
 let projectName: String;
 
 export function create(env: Object, options: Array<String>) {
   projectName = options[0];
-  go().then((res) => {    
-      console.log(logSymbols.info, "开发 npm run dev");
-      console.log(logSymbols.info, "编译 npm run build");
-      console.log(logSymbols.info, "编译到本地路径 npm run build:local");
-      console.log(logSymbols.info, "上传 npm run upload");
-      console.log(logSymbols.info, "代码检查和格式化 npm run lint");
-      console.log(logSymbols.info, "图片压缩和webp转换 npm run compress");
-   
+  go().then((res) => {
+    console.log()
+    console.log(logSymbols.info, `cd ${projectName}`);
+    console.log(logSymbols.info, "npm run serve");
   });
-} 
+}
 async function go() {
   const projectRoot = await new Promise((resolve, reject) => {
     const list = glob.sync("*");
@@ -53,8 +48,7 @@ async function go() {
               type: "list",
               message: `Target directory already exists. Pick an action:`,
               choices: [
-                { name: "Overwrite", value: "overwrite" },
-                { name: "Merge", value: "merge" },
+                { name: "Overwrite", value: "overwrite" }, 
                 { name: "Cancel", value: false },
               ],
             },
@@ -62,10 +56,9 @@ async function go() {
           .then((res: any) => {
             if (!res.action) {
               return;
-            } else if (res.action === "overwrite") {
-              console.log("删除");
-              fs.remove(targetDir).then(() => {
-                console.log("删除");
+            } else if (res.action === "overwrite") { 
+              fs.remove(targetDir).then(() => { 
+                resolve(projectName);
               });
             }
           });
@@ -142,13 +135,14 @@ async function go() {
     await new generator({ name: projectName }).render();
 
     console.log(`📦  Installing additional dependencies...`);
-
-    const { spawn } = require("child_process"); 
-    const cwd = process.cwd();
-    const targetDir = path.resolve(cwd, String(projectName) || ".");
-    const ls = spawn("npm", ["i"], { cwd:targetDir,stdio: "inherit" });
-    ls.on("close", (code: any) => {
-        
+    return new Promise((resolve, reject) => {
+      const { spawn } = require("child_process");
+      const cwd = process.cwd();
+      const targetDir = path.resolve(cwd, String(projectName) || ".");
+      const ls = spawn("npm", ["i"], { cwd: targetDir, stdio: "inherit" });
+      ls.on("close", (code: any) => {
+        resolve();
+      });
     });
   }
 }
