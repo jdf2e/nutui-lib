@@ -1,11 +1,10 @@
  
-const path = require("path");
-const glob = require("glob");
-const inquirer = require("inquirer");
-const fs = require("fs-extra");
+import path = require("path");
+import glob = require("glob");
+import inquirer = require("inquirer");
+import fs = require("fs-extra");
 const generator = require("../compiler/generator");
-const logSymbols = require("log-symbols");
-const chalk = require("chalk");
+import logSymbols = require("log-symbols"); 
 const latestVersion = require("latest-version");
 let projectName: String;
 
@@ -46,15 +45,13 @@ async function go() {
         }).length !== 0
       ) {
         const cwd = process.cwd();
-        const targetDir = path.resolve(cwd, projectName || ".");
+        const targetDir = path.resolve(cwd, String(projectName) || ".");
         inquirer
           .prompt([
             {
               name: "action",
               type: "list",
-              message: `Target directory ${chalk.cyan(
-                targetDir
-              )} already exists. Pick an action:`,
+              message: `Target directory already exists. Pick an action:`,
               choices: [
                 { name: "Overwrite", value: "overwrite" },
                 { name: "Merge", value: "merge" },
@@ -148,7 +145,7 @@ async function go() {
 
     const { spawn } = require("child_process"); 
     const cwd = process.cwd();
-    const targetDir = path.resolve(cwd, projectName || ".");
+    const targetDir = path.resolve(cwd, String(projectName) || ".");
     const ls = spawn("npm", ["i"], { cwd:targetDir,stdio: "inherit" });
     ls.on("close", (code: any) => {
         

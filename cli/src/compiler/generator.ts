@@ -1,9 +1,10 @@
-const fs = require("fs-extra");
+import fs = require("fs-extra");
 const ejs = require("ejs");
-const path = require("path");
-const globby = require("globby");
+import path = require("path");
+import globby = require("globby");
 const { isBinaryFileSync } = require("isbinaryfile");
-module.exports = class generator {
+  
+module.exports = class generator   {
   private files: {[k:string]:any };
   private name: any;
   constructor(param: any) {
@@ -53,9 +54,8 @@ function pkg() {
     version: "0.1.0",
     private: true,
     scripts: {
-      serve: "vue-cli-service serve",
-      build: "vue-cli-service build",
-      lint: "vue-cli-service lint",
+      serve: "nut-cli-service serve",
+      build: "nut-cli-service build", 
     },
     dependencies: {
       "core-js": "^3.6.5",

@@ -3,7 +3,7 @@ import WebpackDevServer from 'webpack-dev-server';
 import logger from '../util/logger';
 import { getPort } from 'portfinder';
 import address from 'address';
-
+ 
 function devServer(config: Webpack.Configuration) {
 	const compiler = Webpack(config);
 	const devServerOptions = {
@@ -23,6 +23,7 @@ function devServer(config: Webpack.Configuration) {
 			errors: true
 		}
 	};
+	Object.assign(devServerOptions,config.devServer)
 	getPort(
 		{
 			port: devServerOptions.port,
@@ -43,8 +44,8 @@ function devServer(config: Webpack.Configuration) {
 	);
 }
 function build(config: Webpack.Configuration) {
-	return new Promise((resolve, reject) => {
-		Webpack(config, (err: any, stats) => {
+	return new Promise((resolve, reject) => { 
+		Webpack(config, (err: any, stats) => { 
 			if (err || stats.hasErrors()) {
 				// 在这里处理错误
 				if (err) {
@@ -69,7 +70,7 @@ function build(config: Webpack.Configuration) {
 		});
 	});
 }
-export function compileWebPack(config: Webpack.Configuration) {
+export function compileWebPack(config: Webpack.Configuration) { 
 	switch (config.mode) {
 		case 'development':
 			devServer(config);
