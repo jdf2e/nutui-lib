@@ -37,6 +37,9 @@
 						<li>
 							<a href="#/ActionSheet">组件</a>
 						</li>
+						 <li>
+							<a href="#/design">资源</a>
+						</li>
 						<li>
 							<a href="/demo.html#/index" class="qrcode top-qr" target="_blank">
 								示例
@@ -561,7 +564,7 @@ export default {
 		position: absolute;
 		top: 0;
 		right: 100px;
-		width: 450px;
+		width: 530px;
 		font-size: 12px;
 		li {
 			float: left;
