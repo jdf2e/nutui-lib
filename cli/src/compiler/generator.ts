@@ -13,7 +13,7 @@ module.exports = class generator   {
   }
 
   async render() {
-    const source = path.resolve(process.cwd(), "template");
+    const source = path.resolve(__dirname, "../../template");
     const _files = await globby(["**/*"], { cwd: source });
     return new Promise((resolve, reject) => {
       for (const rawPath of _files) {
