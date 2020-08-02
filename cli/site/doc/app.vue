@@ -27,7 +27,7 @@
 							<a href="#/design">资源</a>
 						</li>
 						<li>
-							<a class="qrcode demoLink" href="/demo.html#/index" target="_blank">
+							<a class="qrcode demoLink" :href="demourl" target="_blank">
 								示例
 								<a :href="routerName">
 									<span>请使用手机扫码体验</span>
