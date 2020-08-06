@@ -15,7 +15,7 @@
 				<div class="h-nav">
 					<search />
 
-					<ul class="list">
+					<ul class="list" :class="{'nutui':isNutUI}">
 						<li class="joinus" v-if="isNutUI">
 							<a href="#/joinus"></a>
 							<img src="./asset/img/jion_us.gif" alt="" />
@@ -286,6 +286,7 @@ export default {
 		display: flex;
 		padding-left: 42px;
 		align-items: center;
+		justify-content: space-between;
 		width: 100%;
 		background: #fff;
 		z-index: 999;
@@ -299,7 +300,7 @@ export default {
 		}
 		.search-box {
 			height: 22px;
-			min-width: 250px;
+			min-width: 300px;
 			position: relative;
 			float: left;
 			input {
@@ -320,7 +321,7 @@ export default {
 		.search-list {
 			background: #fff;
 			position: absolute;
-			width: 250px;
+			width: 300px;
 			list-style: none;
 			border: 1px solid #f2f2f2;
 			z-index: 99;
@@ -358,9 +359,10 @@ export default {
 	.list {
 		display: flex;
 		list-style: none;
-		margin-left: auto;
 		align-items: center;
-		width: 674px;
+		&.nutui{
+			min-width: 674px;
+		}
 		li {
 			padding: 0 10px;
 			height: 63px;
