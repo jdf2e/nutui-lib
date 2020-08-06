@@ -299,7 +299,7 @@ export default {
 		}
 		.search-box {
 			height: 22px;
-			min-width: 300px;
+			min-width: 250px;
 			position: relative;
 			float: left;
 			input {
@@ -320,7 +320,7 @@ export default {
 		.search-list {
 			background: #fff;
 			position: absolute;
-			width: 300px;
+			width: 250px;
 			list-style: none;
 			border: 1px solid #f2f2f2;
 			z-index: 99;
@@ -360,6 +360,7 @@ export default {
 		list-style: none;
 		margin-left: auto;
 		align-items: center;
+		width: 674px;
 		li {
 			padding: 0 10px;
 			height: 63px;
