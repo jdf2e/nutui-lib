@@ -1,6 +1,6 @@
 {
   "name": "@nutui/cli",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "nutui cli",
   "main": "./dist_cli/bin/index.js",
   "files": [
