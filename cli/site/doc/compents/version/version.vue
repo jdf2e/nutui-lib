@@ -17,7 +17,7 @@ export default {
   mounted() {
     if (name == "@nutui/nutui") {
       this.isNutUI=true;
-      this.versions = ["1.x", "2.x"];
+      this.versions = ["1.x", "2.x","3.x"];
       this.currentVersion = "2.x";
     } else {
       this.isNutUI=false;
@@ -32,10 +32,13 @@ export default {
           window.location.href = "https://nutui.jd.com/1x/";
           break;
         case "2.x":
-          window.location.href = " https://nutui.jd.com/";
+          window.location.href = "https://nutui.jd.com/";
+          break;
+        case "3.x":
+          window.open("https://nutui.jd.com/3x/");
           break;
         case "jdl":
-          window.location.href = " https://nutui.jd.com/jdl/";
+          window.location.href = "https://nutui.jd.com/jdl/";
           break;
       }
     }

@@ -107,7 +107,7 @@ router.afterEach((to, from) => {
 	try {
 	  setTimeout(() => {
 		new Image().src =
-		  "http://nutui-server.jd.com/openapi/point?p=" +
+		  "https://nutui.jd.com/openapi/point?p=" +
 		  encodeURIComponent(JSON.stringify(location));
 	  }, 500);
 	} catch (error) {}
