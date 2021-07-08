@@ -32,10 +32,10 @@ export default {
           window.location.href = "https://nutui.jd.com/1x/";
           break;
         case "2.x":
-          window.location.href = "https://nutui.jd.com/";
+          window.location.href = "https://nutui.jd.com/2x/";
           break;
         case "3.x":
-          window.open("https://nutui.jd.com/3x/");
+          window.open("https://nutui.jd.com/");
           break;
         case "jdl":
           window.location.href = "https://nutui.jd.com/jdl/";
